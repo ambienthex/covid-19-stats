@@ -34,6 +34,7 @@ Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/8235174
 | Table_Names       | string   | The Table Name is used to delineate the specific Johns Hopkins datasets that were used. Values: "Time Series" or  "Daily Summary". |
 
 # Sample CSV records from John Hopkins' Data COVID-19 Cases Dataset
+<font size="-2">
 |           |       |            |           |                |                |        |              |      |         |                    |                   |             | 
 |-----------|-------|------------|-----------|----------------|----------------|--------|--------------|------|---------|--------------------|-------------------|-------------| 
 | Case_Type | Cases | Difference | Date      | Country_Region | Province_State | Admin2 | Combined_Key | FIPS | Lat     | Long               | Prep_Flow_Runtime | Table_Names | 
@@ -46,6 +47,7 @@ Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/8235174
 | Confirmed | 0.0   | 0.0        | 2/26/2020 | US             | New Hampshire  |        |              |      | 42.9931 | -71.82600000000001 | 3/29/2020         | Time Series | 
 | Confirmed | 0.0   | 0.0        | 2/11/2020 | US             | Louisiana      |        |              |      | 29.6499 | -91.8678           | 3/29/2020         | Time Series | 
 | Confirmed | 12.0  | 3.0        | 3/12/2020 | US             | Maryland       |        |              |      | 38.7849 | -77.2405           | 3/29/2020         | Time Series | 
+</font>
 
 # Queries
 Using the data definiton above, we want to be able to filter records to group by date and sum case counts for deaths and infections seperately. 
