@@ -5,15 +5,16 @@ The US Center for Disease Control and Prevention data reported that between 160 
 
 Source: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll-worst-case-scenario-millions-dead-in-us-a9402276.html
 
-A million deaths seemed a little high to me and wanted to try forecasting the death toll to see if that was media hyperbole or not. Found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
+A million deaths seemed a little high to me and wanted to try forecasting the death toll myself to see if that was media hyperbole or not. Seems that it was, so read on. Found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
 
 Used Python with the Pandas and Facebook Prophet data to forecast the death toll in the U.S. and found it to be in the range of 75,000 to 210,000 with a forecast line down the middle at around 140,000. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. That seemed more reasonable albiet still tragic.
-
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 On March 29th, Fauci announced That 100,000 To 200,000 Americans Could Die From The Coronavirus. A forecast using FB Prophet with the John Hopkins seems to be inline. 
 
 Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
+
+# Sample Facebook Prophet COVID-19 Death Forecast which is inline with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 # John Hopkins Case Data CSV Definition
 
