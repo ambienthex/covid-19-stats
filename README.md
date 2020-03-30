@@ -330,5 +330,5 @@ Sample Output as of March 30th, 2020 data:
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infection-components.png)
 
 # Conclusion
-That's that and seems to be inline with the official forecast. Take this all for a grain of salt as I have no experience with epidemiology or any medical field. It does appear the official death toll forecast was based on a forecast using linear regression on the death trend. Hope it the numbers are way less. Stay safe and feel free to distrubute the code.
+That's that and seems to be inline with the official forecast. Take this all for a grain of salt as I have no experience with epidemiology or any medical field. It does appear the official death toll forecast was based on a forecast using linear regression on the death trend. Hope the numbers are way less. Stay safe and feel free to distrubute the code.
 
