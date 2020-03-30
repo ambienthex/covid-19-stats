@@ -34,18 +34,18 @@ Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/8235174
 | Table_Names       | string   | The Table Name is used to delineate the specific Johns Hopkins datasets that were used. Values: "Time Series" or  "Daily Summary". |
 
 # Sample CSV records from John Hopkins' Data COVID-19 Cases Dataset
-|                                                                                                                               | 
-|-------------------------------------------------------------------------------------------------------------------------------| 
-| Case_Type,Cases,Difference,Date,Country_Region,Province_State,Admin2,Combined_Key,FIPS,Lat,Long,Prep_Flow_Runtime,Table_Names | 
-| Confirmed,0.0,0.0,2/8/2020,US,North Dakota,,,,47.5289,-99.78399999999999,3/29/2020,Time Series                                | 
-| Deaths,0.0,0.0,3/16/2020,US,Wisconsin,,,,43.0186,-92.3814,3/29/2020,Time Series                                               | 
-| Confirmed,6.0,2.0,3/10/2020,US,Kentucky,,,,37.6681,-85.6435,3/29/2020,Time Series                                             | 
-| Deaths,0.0,0.0,1/26/2020,US,Minnesota,,,,43.9952,-93.9002,3/29/2020,Time Series                                               | 
-| Deaths,0.0,0.0,3/5/2020,US,Hawaii,,,,21.0943,-157.8584,3/29/2020,Time Series                                                  | 
-| Deaths,0.0,0.0,3/19/2020,US,Utah,,,,40.15,-112.0953,3/29/2020,Time Series                                                     | 
-| Confirmed,0.0,0.0,2/26/2020,US,New Hampshire,,,,42.9931,-71.82600000000001,3/29/2020,Time Series                              | 
-| Confirmed,0.0,0.0,2/11/2020,US,Louisiana,,,,29.6499,-91.8678,3/29/2020,Time Series                                            | 
-| Confirmed,12.0,3.0,3/12/2020,US,Maryland,,,,38.7849,-77.2405,3/29/2020,Time Series                                            | 
+|           |       |            |           |                |                |        |              |      |         |                    |                   |             | 
+|-----------|-------|------------|-----------|----------------|----------------|--------|--------------|------|---------|--------------------|-------------------|-------------| 
+| Case_Type | Cases | Difference | Date      | Country_Region | Province_State | Admin2 | Combined_Key | FIPS | Lat     | Long               | Prep_Flow_Runtime | Table_Names | 
+| Confirmed | 0.0   | 0.0        | 2/8/2020  | US             | North Dakota   |        |              |      | 47.5289 | -99.78399999999999 | 3/29/2020         | Time Series | 
+| Deaths    | 0.0   | 0.0        | 3/16/2020 | US             | Wisconsin      |        |              |      | 43.0186 | -92.3814           | 3/29/2020         | Time Series | 
+| Confirmed | 6.0   | 2.0        | 3/10/2020 | US             | Kentucky       |        |              |      | 37.6681 | -85.6435           | 3/29/2020         | Time Series | 
+| Deaths    | 0.0   | 0.0        | 1/26/2020 | US             | Minnesota      |        |              |      | 43.9952 | -93.9002           | 3/29/2020         | Time Series | 
+| Deaths    | 0.0   | 0.0        | 3/5/2020  | US             | Hawaii         |        |              |      | 21.0943 | -157.8584          | 3/29/2020         | Time Series | 
+| Deaths    | 0.0   | 0.0        | 3/19/2020 | US             | Utah           |        |              |      | 40.15   | -112.0953          | 3/29/2020         | Time Series | 
+| Confirmed | 0.0   | 0.0        | 2/26/2020 | US             | New Hampshire  |        |              |      | 42.9931 | -71.82600000000001 | 3/29/2020         | Time Series | 
+| Confirmed | 0.0   | 0.0        | 2/11/2020 | US             | Louisiana      |        |              |      | 29.6499 | -91.8678           | 3/29/2020         | Time Series | 
+| Confirmed | 12.0  | 3.0        | 3/12/2020 | US             | Maryland       |        |              |      | 38.7849 | -77.2405           | 3/29/2020         | Time Series | 
 
 # Queries
 Using the data definiton above, we want to be able to filter records to group by date and sum case counts for deaths and infections seperately. 
