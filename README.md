@@ -30,7 +30,8 @@ Source: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavi
 
 2. Aggregate cases by date with a sum on death count to get the number of deaths per day.
 
-3. Was going to try implementing raw linear regression, but Facebook Prophet makes it easy and automatically fits the curve to the model automatically using machine learning. Will use Python, Pandas for fetching and querying the data and Facebook Prophet to handle the forecast and rendering of forecast graphs. 
+3. Was going to try implementing raw linear regression (Y = a + bX) in code, but Facebook's Prophet forecasting library makes it easy and automatically handles model curve fitting using machine learning. Will use Python, Pandas for fetching and querying the data and Facebook Prophet to handle the forecast and rendering of forecast graphs.
+
 
 # John Hopkins Case Data CSV Definition
 
