@@ -13,7 +13,8 @@ On March 29th, Fauci announced That 100,000 To 200,000 Americans Could Die From 
 
 Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
-# Sample Facebook Prophet COVID-19 Death Forecast which is inline with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths.
+# Sample Facebook Prophet COVID-19 Death Forecast
+Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly inline with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 # John Hopkins Case Data CSV Definition
