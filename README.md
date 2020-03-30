@@ -9,6 +9,8 @@ A million deaths seemed a little high to me and wanted to try forecasting the de
 
 Used Python with the Pandas and Facebook Prophet data to forecast the death toll in the U.S. and found it to be in the range of 75,000 to 210,000 with a forecast line down the middle at around 140,000. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. That seemed more reasonable albiet still tragic.
 
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
+
 On March 29th, Fauci announced That 100,000 To 200,000 Americans Could Die From The Coronavirus. A forecast using FB Prophet with the John Hopkins seems to be inline. 
 
 Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
