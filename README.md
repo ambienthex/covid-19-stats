@@ -119,7 +119,7 @@ Found that these settings match the predictions by Dr. Fauci best.
     )
     
 ### changepoint_prior_scale / Adjusting trend flexibility:
-If the trend changes are being overfit (too much flexibility) or underfit (not enough flexibility),you can adjust the strength of the sparse prior using the input argumENT Changepoint_prior_scale. By default, this parameter is set to 0.05. Increasing it will make the trend more flexible. Side effect of increasing this value is that it will generally increase future trend uncertainty.
+If the trend changes are being overfit (too much flexibility) or underfit (not enough flexibility), you can adjust the strength of the sparse prior using the input argumENT Changepoint_prior_scale. By default, this parameter is set to 0.05. Increasing it will make the trend more flexible. Side effect of increasing this value is that it will generally increase future trend uncertainty.
 
 ### changepoint_range:
 By default changepoints are only inferred for the first 80% of the time series in order to have plenty of runway for projecting the trend forward and to avoid overfitting fluctuations at the end of the time series. This default works in many situations but not all, and can be change using the changepoint_range argument. For example, m = Prophet(changepoint_range=0.9) in Python or m <- prophet(changepoint.range = 0.9) in R will place potential changepoints in the first 90% of the time series.
