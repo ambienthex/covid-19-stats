@@ -43,6 +43,7 @@ GROUP BY date
 ORDER BY date ASC
 
 ### Pandas for Death Aggregate by Date
+```python
     # Convert date column to an actual datetime data type for sorting
     df['Date'] = pd.to_datetime(df['Date'])
 
@@ -56,7 +57,8 @@ ORDER BY date ASC
 
     # Sort data by date ascending
     df = df.sort_values(by='Date')
-    
+```
+
 ### SQL for Infections Aggregate by Date
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Confirmed'
@@ -66,6 +68,7 @@ GROUP BY date
 ORDER BY date ASC
 
 ### Pandas for Infection Aggregate by Date
+```python
     # Convert date column to an actual datetime data type for sorting
     df['Date'] = pd.to_datetime(df['Date'])
 
@@ -79,7 +82,7 @@ ORDER BY date ASC
 
     # Sort data by date ascending
     df = df.sort_values(by='Date')
-
+```
 
 # Facebook Prophet Configuration
 
