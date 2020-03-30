@@ -5,7 +5,7 @@ The US Center for Disease Control and Prevention data reported that between 160 
 
 Source: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll-worst-case-scenario-millions-dead-in-us-a9402276.html
 
-A million deaths seemed a little high to me and wanted to try forecasting the death toll to see if that was hyperbole or not. Found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
+A million deaths seemed a little high to me and wanted to try forecasting the death toll to see if that was hyperbole or not. Found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
 
 Used Python with the Pandas and Facebook Prophet data to forecast the death toll in the U.S. and found it to be in the range of 75,000 to 210,000 with a forecast line down the middle at around 140,000. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. That seemed more reasonable albiet still tragic.
 
@@ -13,6 +13,20 @@ On March 29th, Fauci announced That 100,000 To 200,000 Americans Could Die From 
 
 Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
-# John Hopkins Case Data CSV
+# John Hopkins Case Data CSV Definition
 
-
+| COLUMN NAME       | TYPE     | DESCRIPTION                                                                                                                        |
+|-------------------|----------|------------------------------------------------------------------------------------------------------------------------------------|
+| Case_Type         | string   |  Confirmed Cases and total deaths. Values: "Confirmed" or "Deaths")                                                                |
+| Cases             | integeer | Point in time snapshot of to-date totals (i.e., Mar 22 is inclusive of all prior dates)                                            |
+| Difference        | integer  |                                                                                                                                    |
+| Date              | date     | Jan 23, 2020 - Present                                                                                                             |
+| Country_Region    | string   | Provided for all countries                                                                                                         |
+| Province_State    | string   | Provided for Australia, Canada, China, Denmark, France, Netherlands, United Kingdom, United States                                 |
+| Admin2            | string   | US only - County name                                                                                                              |
+| Combined_Key      | string   | US only - Combination of Admin 2, State_Province, and Country_Region                                                               |
+| FIPS              | integer  | US only - 5-digit Federal Information Processing Standard                                                                          |
+| Lat               | double   | Latitude                                                                                                                           |
+| Long              | double   | Longitude                                                                                                                          |
+| Prep_Flow_Runtime | date     | Date when the ETL job ran                                                                                                          |
+| Table_Names       | string   | The Table Name is used to delineate the specific Johns Hopkins datasets that were used. Values: "Time Series" or  "Daily Summary". |
