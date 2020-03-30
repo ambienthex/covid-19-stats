@@ -7,7 +7,7 @@ Source: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll
 
 Over a million deaths seemed too high of an estimate to me and wanted to attempt a basic forecast of the death toll myself without the epidemiology factors to determine whether that was simply media hyperbole. I found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
 
-Python with the Pandas and Facebook Prophet data was used to forecast the death toll in the U.S. and it is found to be in the range of 75,000 to 210,000 with a forecast line down the middle at around 140,000. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. Albeit still tragic, this seemed more reasonable than previously forecasted by media.
+Used Python with the Pandas and Facebook Prophet data to try the forecast the U.S. death toll and found to be in the range of 75,000 to 210,000 deaths. Forecast line down the middle at around 140,000 eyeballing the graph. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. Albeit still tragic, this seemed more reasonable than previously forecasted by media.
 
 On March 29th, Fauci announced That 100,000 To 200,000 Americans Could Die From The Coronavirus. A forecast using FB Prophet with the John Hopkins seems to be inline. 
 
