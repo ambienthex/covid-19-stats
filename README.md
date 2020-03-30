@@ -1,7 +1,7 @@
 # Project: U.S. COVID-19 Virus Forecasting
 
 # Abstract:
-On March 15th, 2020, The US Center for Disease Control and Prevention data reported that between 160 and 214 million people could become infected in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
+On March 15th, 2020, The US Center for Disease Control and Prevention data reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
 
 Source: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll-worst-case-scenario-millions-dead-in-us-a9402276.html
 
