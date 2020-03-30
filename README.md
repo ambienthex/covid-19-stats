@@ -34,7 +34,7 @@ Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/8235174
 # Queries
 Using the data definiton above, we want to be able to filter records to group by date and sum case counts for deaths and infections seperately. 
 
-## SQL for Death Aggregate by Date
+### SQL for Death Aggregate by Date
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Deaths'
 AND Country_Region = 'US'
@@ -42,7 +42,7 @@ AND Table_Names = 'Time Series'
 GROUP BY date
 ORDER BY date ASC
 
-## Pandas for Death Aggregate by Date
+### Pandas for Death Aggregate by Date
     # Convert date column to an actual datetime data type for sorting
     df['Date'] = pd.to_datetime(df['Date'])
 
@@ -57,7 +57,7 @@ ORDER BY date ASC
     # Sort data by date ascending
     df = df.sort_values(by='Date')
     
-## SQL for Infections Aggregate by Date
+### SQL for Infections Aggregate by Date
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Confirmed'
 AND Country_Region = 'US'
@@ -65,7 +65,7 @@ AND Table_Names = 'Time Series'
 GROUP BY date
 ORDER BY date ASC
 
-## Pandas for Infection Aggregate by Date
+### Pandas for Infection Aggregate by Date
     # Convert date column to an actual datetime data type for sorting
     df['Date'] = pd.to_datetime(df['Date'])
 
