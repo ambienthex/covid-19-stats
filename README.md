@@ -317,16 +317,16 @@ main()
 
 Sample Output as of March 30th, 2020 data:
 
-### Death Forecast
+## Death Forecast
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
-### Death Forecast Components
+## Death Forecast Components
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/death-components.png)
 
-### Infection Forecast
+## Infection Forecast
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infections.png)
 
-### Infection Forecast Components
+## Infection Forecast Components
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infection-components.png)
 
 # Conclusion
