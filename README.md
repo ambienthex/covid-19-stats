@@ -30,3 +30,53 @@ Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/8235174
 | Long              | double   | Longitude                                                                                                                          |
 | Prep_Flow_Runtime | date     | Date when the ETL job ran                                                                                                          |
 | Table_Names       | string   | The Table Name is used to delineate the specific Johns Hopkins datasets that were used. Values: "Time Series" or  "Daily Summary". |
+
+# Queries
+Using the data definiton above, we want to be able to filter records to group by date and sum case counts for deaths and infections seperately. 
+
+## SQL for Death Aggregate by Date
+SELECT date, sum(Cases)
+WHERE Case_Type = 'Deaths'
+AND Country_Region = 'US'
+AND Table_Names = 'Time Series'
+GROUP BY date
+ORDER BY date ASC
+
+## Pandas for Death Aggregate by Date
+    # Convert date column to an actual datetime data type for sorting
+    df['Date'] = pd.to_datetime(df['Date'])
+
+    # Filter data by case type and country
+    df = df[(df.Case_Type == 'Deaths') &
+            (df.Country_Region == 'US') &
+            (df.Table_Names == 'Time Series')]
+
+    # Group data by date and aggregate sum of cases
+    df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
+
+    # Sort data by date ascending
+    df = df.sort_values(by='Date')
+    
+## SQL for Infections Aggregate by Date
+SELECT date, sum(Cases)
+WHERE Case_Type = 'Confirmed'
+AND Country_Region = 'US'
+AND Table_Names = 'Time Series'
+GROUP BY date
+ORDER BY date ASC
+
+## Pandas for Infection Aggregate by Date
+    # Convert date column to an actual datetime data type for sorting
+    df['Date'] = pd.to_datetime(df['Date'])
+
+    # Filter data by case type and country
+    df = df[(df.Case_Type == 'Confirmed') &
+            (df.Country_Region == 'US') &
+            (df.Table_Names == 'Time Series')]
+
+    # Group data by date and aggregate sum of cases
+    df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
+
+    # Sort data by date ascending
+    df = df.sort_values(by='Date')
+
