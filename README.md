@@ -80,3 +80,32 @@ ORDER BY date ASC
     # Sort data by date ascending
     df = df.sort_values(by='Date')
 
+
+# Facebook Prophet Configuration
+
+Found that these settings match the predictions by Dr. Fauci best. 
+
+    # Instantiate a new Prophet object with params best suited for daily
+    # seasonalitty of COVID-19 virus case data.
+    model = Prophet(
+        changepoint_prior_scale=0.2,
+        changepoint_range=0.95,
+        yearly_seasonality=False,
+        weekly_seasonality=True,  # Enable daily seasonality
+        daily_seasonality=True,  # Enable daily seasonality
+        seasonality_mode='additive',
+    )
+    
+### changepoint_prior_scale / Adjusting trend flexibility:
+If the trend changes are being overfit (too much flexibility) or underfit (not enough flexibility),you can adjust the strength of the sparse prior using the input argumENT Changepoint_prior_scale. By default, this parameter is set to 0.05. Increasing it will make the trend more flexible. Side effect of increasing this value is that it will generally increase future trend uncertainty.
+
+### changepoint_range:
+By default changepoints are only inferred for the first 80% of the time series in order to have plenty of runway for projecting the trend forward and to avoid overfitting fluctuations at the end of the time series. This default works in many situations but not all, and can be change using the changepoint_range argument. For example, m = Prophet(changepoint_range=0.9) in Python or m <- prophet(changepoint.range = 0.9) in R will place potential changepoints in the first 90% of the time series.
+
+### seasonality_mode:
+With seasonality_mode='multiplicative', holiday effects will also be modeled as multiplicative. Any added seasonalities or extra regressors will by default use whatever seasonality_mode is set to, but can be overriden by specifying mode='additive' or mode='multiplicative' as an argument when adding the seasonality or regressor.
+
+
+### Setting date data type for pandas
+Date will sort alphanumerically if you don't explicity set the data type
+example: df['Date'] = pd.to_datetime(df['Date'])
