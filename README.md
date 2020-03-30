@@ -1,7 +1,7 @@
 # Project: U.S. COVID-19 Virus Forecasting
 
 # Abstract:
-On March 15th, 2020, The US Center for Disease Control and Prevention data reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
+**On March 15th, 2020**, The US Center for Disease Control and Prevention data reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
 
 Source: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll-worst-case-scenario-millions-dead-in-us-a9402276.html
 
@@ -9,7 +9,7 @@ Over a million deaths seemed too high of an estimate to me and wanted to attempt
 
 Used Python with the Pandas and Facebook Prophet data to try the forecast the U.S. death toll and found to be in the range of 75,000 to 210,000 deaths. Forecast line down the middle at around 140,000 eyeballing the graph. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. Albeit still tragic, this seemed more reasonable than previously forecasted by media.
 
-On March 29th, Fauci announced That 100,000 To 200,000 Americans Could Die From The Coronavirus. A forecast using FB Prophet with the John Hopkins seems to be inline. 
+**On March 29th**, Fauci announced That 100,000 To 200,000 Americans Could Die From The Coronavirus. A forecast using FB Prophet with the John Hopkins seems to be inline. 
 
 Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
@@ -18,7 +18,7 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly inl
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 # Assumption
-On March 3rd, 2020 Steve Goodman, a professor of epidemiology at Stanford University said “The infection numbers are almost meaningles. There’s a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
+**On March 3rd, 2020** Steve Goodman, a professor of epidemiology at Stanford University said “The infection numbers are almost meaningles. There’s a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
 
 Was thinking maybe the infection data could be considered in the forecast somehow, but it seems Dr. Fauci's estimate of 100,000 to 200,000 deaths appears to be based on a linear regression of the death numbers. Death seems to be the only absolute when forecasting if the infection data is almost meaningless. 
 
