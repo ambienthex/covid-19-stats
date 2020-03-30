@@ -18,9 +18,9 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly inl
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 # Assumption
-On March 3rd, 2020 Steve Goodman, a professor of epidemiology at Stanford University said “The infectionnumbers are almost meaningles. There’s a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
+On March 3rd, 2020 Steve Goodman, a professor of epidemiology at Stanford University said “The infectionn umbers are almost meaningles. There’s a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
 
-Was thinking maybe I could factor in the infection data for a better forecast, but it seems Dr. Fauci's estimate of 100,000 to 200,000 deaths was based on a linear regression of the death numbers. Death seems to be the only absolute when forecasting if the infection data is almost meaningless. 
+Was thinking maybe I could factor in the infection data for a better forecast, but it seems Dr. Fauci's estimate of 100,000 to 200,000 deaths appears to be based on a linear regression of the death numbers. Death seems to be the only absolute when forecasting if the infection data is almost meaningless. 
 
 Source: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavirus-cases-is-an-almost-meaningless-metric
 
