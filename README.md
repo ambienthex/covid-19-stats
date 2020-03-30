@@ -321,7 +321,7 @@ Sample Output as of March 30th, 2020 data:
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 ## Death Forecast Components
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/death-components.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths-components.png)
 
 ## Infection Forecast
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infections.png)
