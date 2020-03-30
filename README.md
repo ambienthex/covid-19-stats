@@ -5,7 +5,7 @@ The US Center for Disease Control and Prevention data reported that between 160 
 
 Source: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll-worst-case-scenario-millions-dead-in-us-a9402276.html
 
-A million deaths seemed a little high to me and prompted me to attempt a basic forecast of the death toll myself without the epidemiology factors to determine whether that was simply media hyperbole. Seems that it was, so read on. It was found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
+Over a million deaths seemed too high of an estimate to me and wanted to attempt a basic forecast of the death toll myself without the epidemiology factors to determine whether that was simply media hyperbole. I found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
 
 Python with the Pandas and Facebook Prophet data was used to forecast the death toll in the U.S. and it is found to be in the range of 75,000 to 210,000 with a forecast line down the middle at around 140,000. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. Albeit still tragic, this seemed more reasonable than previously forecasted by media.
 
@@ -18,9 +18,11 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly inl
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 # Assumption
-On March 3rd, 2020 Steve Goodman, a professor of epidemiology at Stanford University said “The infectionn umbers are almost meaningles. There’s a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
+On March 3rd, 2020 Steve Goodman, a professor of epidemiology at Stanford University said “The infection numbers are almost meaningles. There’s a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
 
 Was thinking maybe the infection data could be considered in the forecast somehow, but it seems Dr. Fauci's estimate of 100,000 to 200,000 deaths appears to be based on a linear regression of the death numbers. Death seems to be the only absolute when forecasting if the infection data is almost meaningless. 
+
+Even though a Facebook Prophet forecast with the John Hopkins case data set and the prediction of 100,000 to 200,000 deaths is in line, I'm a little more optimistic that doctors will find treatments that work. Maybe as more people gain some kind of immunity to the virus after falling ill and recovering, the infection rate will drop. My optimistic guesstimate forecast ignoring the forecast results is 50,000 to 100,000 U.S. deaths if the hospitatls are not overwhelmed and doctors and healthcare workers do not fall ill. 
 
 Source: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavirus-cases-is-an-almost-meaningless-metric
 
