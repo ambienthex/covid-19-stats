@@ -315,7 +315,13 @@ main()
 6. python3 stats.py
 7. Output is four image files (deaths.png, death-components.png, infections.png and infections-components.png).
 
-Sample Output as of March 30th, 2020 data:
+Facebook Prophet can be a pain to setup sometime. Refer to Facebook Prophet's documentation if you run into issues:
+https://facebook.github.io/prophet/docs/installation.html
+
+Pandas Documentation:
+https://pandas.pydata.org/docs/
+
+# Sample Output as of March 30th, 2020 data:
 
 ## Death Forecast
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
