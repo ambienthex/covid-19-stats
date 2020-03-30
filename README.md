@@ -305,3 +305,30 @@ def main():
 main()
 
 ```
+
+# Setup, Execution and Output
+1. git clone git@github.com:ambienthex/covid-19-stats.git
+2. cd covid-19-stats
+3. pip3 install pystan
+4. pip3 install pandas
+5. pip3 install fbprophet
+6. python3 stats.py
+7. Output is four image files (deaths.png, death-components.png, infections.png and infections-components.png).
+
+Sample Output as of March 30th, 2020 data:
+
+### Death Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
+
+### Death Forecast Components
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/death-components.png)
+
+### Infection Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infections.png)
+
+### Infection Forecast Components
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infection-components.png)
+
+# Conclusion
+That's that and seems to be inline with the official forecast. Take this all for a grain of salt as I have no experience with epidemiology or any medical field. It does appear the official death toll forecast was based on a forecast using linear regression on the death trend. Hope it the numbers are way less. Stay safe and feel free to distrubute the code.
+
