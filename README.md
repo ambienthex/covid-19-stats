@@ -165,9 +165,9 @@ ORDER BY Date ASC
 | 2020-03-25 | 941  | 
 | 2020-03-26 | 1208 | 
 | 2020-03-27 | 1578 | 
-| 2020-03-28 | 2023 | 
+| **2020-03-28** | **2023** | 
 | 2020-03-29 | 2464 |
-| 2020-03-30 | 2975 ]
+| 2020-03-30 | 2975 |
 
 NPR: March 28, 202010:49 AM ET - More Than 2,000 Americans Have Now Died From The Coronavirus
 **Source:** https://www.npr.org/sections/coronavirus-live-updates/2020/03/28/823106901/confirmed-cases-of-coronavirus-crest-600-000-worldwide
