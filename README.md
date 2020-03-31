@@ -10,7 +10,7 @@ Over a million deaths seemed too high and wanted to attempt a basic forecast of 
 
 Python with the Pandas, Facebook Prophet library and the John Hopkins COVID-19 case data was used to try to forecast the U.S. death toll and it was found to be in the range of 75,000 to 210,000 possible deaths, with a forecast line down the middle at around 140,000 eyeballing the graph. This can change day to day and hopefully decrease as doctors and healthcare workers find treatments that work. Albeit still tragic, this seemed more reasonable than the previously forecasted 200,000 to 1.7 million  possible U.S. deaths reported by the media.  I am more optimistic with a range of 50,000 - 100,000 possible deaths regardless of what the forecast shows as it doesn't account for things that will help or slow the situation. The death toll could be way less if doctors and nurses don't fall ill, hospitals are not overwhelmed and effective treatments are found. Any loss of life is tragic and hope for the best. Believe healthcare workers and medical professionals will adapt and overcome to win the battle against COVID-19.
 
-**On March 29th**, Dr. Anthony Fauci, Director of NIAID(National Institute of Allergy and Infectious Diseases) announced that 100,000 to 200,000 Americans could die from the Coronavirus. 
+**On March 29th**, Dr. Anthony Fauci, Director of NIAID(National Institute of Allergy and Infectious Diseases) announced that 100,000 to 200,000 Americans could die from the Coronavirus which contradicted the 200,000 to 1.7 million range provided by the US Center for Disease Control and Prevention.
 
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
