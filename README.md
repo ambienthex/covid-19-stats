@@ -4,6 +4,7 @@ This GIT repo contains a simple Python(3) script (stats.py) that can be used to 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
 
 **Facebook's Prophet library Documentation:** https://facebook.github.io/prophet/
+
 **Pandas Documentation:** https://pandas.pydata.org/docs/
 
 # Abstract:
