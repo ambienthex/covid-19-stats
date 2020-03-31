@@ -12,9 +12,9 @@ Python with the Pandas, Facebook Prophet library and the John Hopkins COVID-19 c
 
 **On March 29th**, Dr. Anthony Fauci, Director of NIAID(National Institute of Allergy and Infectious Diseases) announced that 100,000 to 200,000 Americans could die from the Coronavirus. 
 
-A simple forecast using FB Prophet with the data from John Hopkins seems to be in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths.
-
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
+
+A simple forecast using FB Prophet with the data from John Hopkins seems to be in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths.
 
 # Sample Facebook Prophet COVID-19 Death Forecast
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths. Forecast and Data Date: March 30th, 2020.
