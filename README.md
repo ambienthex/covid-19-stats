@@ -298,7 +298,7 @@ By default changepoints are only inferred for the first 80% of the time series i
 With seasonality_mode='multiplicative', holiday effects will also be modeled as multiplicative. Any added seasonalities or extra regressors will by default use whatever seasonality_mode is set to, but can be overriden by specifying mode='additive' or mode='multiplicative' as an argument when adding the seasonality or regressor.
 
 
-### Setting date data type for pandas
+### Setting date data type in Pandas
 Date will sort alphanumerically if you don't explicity set the data type to Date.
 **Example:** df['Date'] = pd.to_datetime(df['Date'])
 
