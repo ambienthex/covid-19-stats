@@ -91,7 +91,7 @@ ORDER BY date ASC
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Deaths') &
             (df.Country_Region == 'US') &
-            df.Table_Names == 'Daily Summary']
+            (df.Table_Names == 'Daily Summary')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -116,7 +116,7 @@ ORDER BY date ASC
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Confirmed') &
             (df.Country_Region == 'US') &
-            df.Table_Names == 'Daily Summary']
+            (df.Table_Names == 'Daily Summary')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -236,7 +236,7 @@ def get_aggregate_covid_data_frame(df, case_type, country_region):
     # Filter data by case type and country
     df = df[(df.Case_Type == case_type) &
             (df.Country_Region == country_region) &
-            df.Table_Names == 'Daily Summary']
+            (df.Table_Names == 'Daily Summary')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -346,6 +346,7 @@ def main():
 
 # Invoke main function
 main()
+
 
 ```
 
