@@ -1,5 +1,5 @@
 # Project: U.S. COVID-19 Virus Forecasting
-This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins. The stats.py script will pull the current John Hopkins COVID-19 CSV case data (updated daily at 9a.m.), transform and aggregate the data using Pandas, and generate a forecast using Facebook's Prophet library. Output is four forecast graphs in a PNG image file format. 
+This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins. The stats.py script will pull the current John Hopkins COVID-19 CSV case data (updated daily at 9a.m.), transform and aggregate the data using Pandas, and generate a forecast using Facebook's Prophet library. Output is four forecast graphs in a PNG image file format. Information about Facebook Prophet can be found at https://facebook.github.io/prophet/
 
 # Abstract:
 **On March 15th, 2020**, the US Center for Disease Control and Prevention reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
