@@ -155,7 +155,7 @@ ORDER BY date ASC
 | 2020-03-27 | 1578 | 
 | 2020-03-28 | 2023 | 
 
-___*Death sum is a daily running total and not summing the values of all rows. ___
+___ *Death sum is a daily running total and not summing the values of all rows. ___
 
 NPR: March 28, 202010:49 AM ET - More Than 2,000 Americans Have Now Died From The Coronavirus
 **Source:** https://www.npr.org/sections/coronavirus-live-updates/2020/03/28/823106901/confirmed-cases-of-coronavirus-crest-600-000-worldwide
