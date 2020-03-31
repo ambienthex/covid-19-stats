@@ -336,5 +336,5 @@ https://pandas.pydata.org/docs/
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infection-components.png)
 
 # Conclusion
-That's that and seems to be inline with the official forecast. Take this all for a grain of salt as I have no experience with epidemiology or any medical field. It does appear the official death toll forecast was based on a forecast using linear regression on the death trend. Hope the numbers are way less. Stay safe and feel free to distrubute the code.
+That's that and seems to be inline with the official forecast. Take this all for a grain of salt as I have no experience with epidemiology or any medical field. It does appear the official death toll forecast was based on a forecast using linear regression on the death trend. Hope the numbers are way less. Regardless of what the forecast, I'm more optimistic with a range of 50,000 - 100,000, but may be less if doctors and nurses don't fall ill and the hospitals are not overwhelmed. Any loss of life is tragic and hope for the best. Stay safe and feel free to distrubute the code. 
 
