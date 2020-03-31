@@ -3,6 +3,8 @@ This GIT repo contains a simple Python(3) script (stats.py) that can be used to 
 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
 
+Adding some more graphs and reports in the next day or two. May implement the raw linear regression code for comparison.
+
 **Facebook's Prophet Documentation:** https://facebook.github.io/prophet/
 
 **Pandas Documentation:** https://pandas.pydata.org/docs/
