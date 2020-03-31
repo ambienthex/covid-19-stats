@@ -111,7 +111,6 @@ ORDER BY date ASC
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Confirmed'
 AND Country_Region = 'US'
-AND Table_Names = 'Daily Summary'
 GROUP BY date
 ORDER BY date ASC
 
