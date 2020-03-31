@@ -79,7 +79,6 @@ Using the data definiton above, we want to be able to filter records to group by
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Deaths'
 AND Country_Region = 'US'
-AND Table_Names = 'Daily Summary'
 GROUP BY date
 ORDER BY date ASC
 
@@ -90,8 +89,7 @@ ORDER BY date ASC
 
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Deaths') &
-            (df.Country_Region == 'US') &
-            (df.Table_Names == 'Daily Summary')]
+            (df.Country_Region == 'US')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -115,8 +113,7 @@ ORDER BY date ASC
 
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Confirmed') &
-            (df.Country_Region == 'US') &
-            (df.Table_Names == 'Daily Summary')]
+            (df.Country_Region == 'US')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
