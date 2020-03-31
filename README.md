@@ -26,9 +26,9 @@ Thought I could use the infection case data with the death case data somehow in 
 
 **On March 3rd, 2020**, Steve Goodman, a professor of epidemiology at Stanford University, said, “The infection numbers are almost meaningless. There is a huge reservoir of people who have mild cases, and would not likely seek testing. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus."
 
-Even though a Facebook Prophet forecast with the John Hopkins case data set and the prediction of 100,000 to 200,000 deaths is in line, I'm slightly more optimistic that given time, doctors will find treatments that work. Maybe as more people gain some kind of immunity to the virus after falling ill and recovering, the infection rate will drop. My optimistic guesstimate forecast ignoring the forecast results is 50,000 to 100,000 U.S. deaths if the hospitatls are not overwhelmed and doctors and healthcare workers do not fall ill. 
-
 **Source**: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavirus-cases-is-an-almost-meaningless-metric
+
+Even though this forecast is in the range of 100,000 to 200,000 possible deaths and in line with Dr. Faucis forecast range, I'm slightly more optimistic with a range of 50,000 - 100,000 possible deaths regardless of what the forecast shows. This forecast doesn't account for things that will help or slow the situation. The death toll could be way less if doctors and nurses don't fall ill, hospitals are not overwhelmed and effective treatments are found. Any loss of life is tragic and hope for the best. Believe healthcare workers and medical professionals will adapt and overcome to win the battle against COVID-19.
 
 
 # Implementation
