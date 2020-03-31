@@ -151,8 +151,8 @@ With seasonality_mode='multiplicative', holiday effects will also be modeled as 
 
 
 ### Setting date data type for pandas
-Date will sort alphanumerically if you don't explicity set the data type
-example: df['Date'] = pd.to_datetime(df['Date'])
+Date will sort alphanumerically if you don't explicity set the data type to Date.
+**Example:** df['Date'] = pd.to_datetime(df['Date'])
 
 ## Python Code
 
