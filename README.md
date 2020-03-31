@@ -22,7 +22,7 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 
 # Assumption
 
-Thought I could use the infection data somehow in generating a forecast of possible deaths, but it's been reported to be almost meaningless and incomplete in determining the possible death count. Death seems to be the only absolute.  Appears Dr. Fauci's estimate was generated with linear regression on the aggregated daily death counts, so forecasting on the daily aggregated death counts to see how it compares.
+Thought I could use the infection data with the death data somehow in generating a forecast of possible deaths, but it's been reported to be almost meaningless and incomplete in determining the possible death count. Death seems to be the only absolute.  It appears Dr. Fauci's estimate was possibly generated with linear regression on the aggregated daily death counts, so forecasting on the daily aggregated death counts to see how it compares.
 
 **On March 3rd, 2020**, Steve Goodman, a professor of epidemiology at Stanford University, said, “The infection numbers are almost meaningless. There is a huge reservoir of people who have mild cases, and would not likely seek testing. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus."
 
