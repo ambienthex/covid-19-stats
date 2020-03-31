@@ -79,7 +79,6 @@ Using the data definiton above, we want to be able to filter records to group by
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Deaths'
 AND Country_Region = 'US'
-AND Table_Names = 'Time Series'
 GROUP BY date
 ORDER BY date ASC
 
@@ -90,8 +89,7 @@ ORDER BY date ASC
 
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Deaths') &
-            (df.Country_Region == 'US') &
-            (df.Table_Names == 'Time Series')]
+            (df.Country_Region == 'US')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -104,7 +102,6 @@ ORDER BY date ASC
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Confirmed'
 AND Country_Region = 'US'
-AND Table_Names = 'Time Series'
 GROUP BY date
 ORDER BY date ASC
 
@@ -114,9 +111,8 @@ ORDER BY date ASC
     df['Date'] = pd.to_datetime(df['Date'])
 
     # Filter data by case type and country
-    df = df[(df.Case_Type == 'Confirmed') &
-            (df.Country_Region == 'US') &
-            (df.Table_Names == 'Time Series')]
+    df = df[(df.Case_Type == case_type) &
+            (df.Country_Region == country_region)]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -124,6 +120,45 @@ ORDER BY date ASC
     # Sort data by date ascending
     df = df.sort_values(by='Date')
 ```
+
+### Death Query Validation:
+
+|            |      | 
+|------------|------| 
+| Date       | sum  | 
+| 2020-03-01 | 1    | 
+| 2020-03-02 | 6    | 
+| 2020-03-03 | 7    | 
+| 2020-03-04 | 11   | 
+| 2020-03-05 | 12   | 
+| 2020-03-06 | 14   | 
+| 2020-03-07 | 17   | 
+| 2020-03-08 | 21   | 
+| 2020-03-09 | 22   | 
+| 2020-03-10 | 28   | 
+| 2020-03-11 | 36   | 
+| 2020-03-12 | 40   | 
+| 2020-03-13 | 47   | 
+| 2020-03-14 | 54   | 
+| 2020-03-15 | 63   | 
+| 2020-03-16 | 85   | 
+| 2020-03-17 | 108  | 
+| 2020-03-18 | 118  | 
+| 2020-03-19 | 200  | 
+| 2020-03-20 | 244  | 
+| 2020-03-21 | 307  | 
+| 2020-03-22 | 416  | 
+| 2020-03-23 | 551  | 
+| 2020-03-24 | 705  | 
+| 2020-03-25 | 941  | 
+| 2020-03-26 | 1208 | 
+| 2020-03-27 | 1578 | 
+| 2020-03-28 | 2023 | 
+
+*Death sum is a daily running total and not the number of deaths reported for each day. Dataset has multiple datasets inline, but this is the query and results that align with the death count reported by the media.
+
+NPR: March 28, 202010:49 AM ET - More Than 2,000 Americans Have Now Died From The Coronavirus
+**Source:** https://www.npr.org/sections/coronavirus-live-updates/2020/03/28/823106901/confirmed-cases-of-coronavirus-crest-600-000-worldwide
 
 # Facebook Prophet Configuration
 
@@ -141,7 +176,7 @@ Found that these settings match the predictions by Dr. Fauci best.
     )
     
 ### changepoint_prior_scale / Adjusting trend flexibility:
-If the trend changes are being overfit (too much flexibility) or underfit (not enough flexibility), you can adjust the strength of the sparse prior using the input argumENT Changepoint_prior_scale. By default, this parameter is set to 0.05. Increasing it will make the trend more flexible. Side effect of increasing this value is that it will generally increase future trend uncertainty.
+If the trend changes are being overfit (too much flexibility) or underfit (not enough flexibility), you can adjust the strength of the sparse prior using the input argument Changepoint_prior_scale. By default, this parameter is set to 0.05. Increasing it will make the trend more flexible. Side effect of increasing this value is that it will generally increase future trend uncertainty.
 
 ### changepoint_range:
 By default changepoints are only inferred for the first 80% of the time series in order to have plenty of runway for projecting the trend forward and to avoid overfitting fluctuations at the end of the time series. This default works in many situations but not all, and can be change using the changepoint_range argument. For example, m = Prophet(changepoint_range=0.9) in Python or m <- prophet(changepoint.range = 0.9) in R will place potential changepoints in the first 90% of the time series.
@@ -186,7 +221,6 @@ def get_aggregate_covid_data_frame(df, case_type, country_region):
     # SELECT date, sum(Cases)
     # WHERE Case_Type = [case_type]
     # AND Country_Region = [country_region]
-    # AND Table_Names = 'Time Series'
     # GROUP BY date
     # ORDER BY date ASC
     df = df.copy()
@@ -196,8 +230,7 @@ def get_aggregate_covid_data_frame(df, case_type, country_region):
 
     # Filter data by case type and country
     df = df[(df.Case_Type == case_type) &
-            (df.Country_Region == country_region) &
-            (df.Table_Names == 'Time Series')]
+            (df.Country_Region == country_region)]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
