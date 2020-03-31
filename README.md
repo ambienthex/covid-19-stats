@@ -7,18 +7,18 @@
 
 Over a million deaths seemed too high of an estimate to me and wanted to attempt a basic forecast of the death toll myself without the epidemiology factors to determine whether that was simply media hyperbole. I found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
 
-Used Python with the Pandas and Facebook Prophet data to try the forecast the U.S. death toll and found to be in the range of 75,000 to 210,000 deaths. Forecast line down the middle at around 140,000 eyeballing the graph. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. Albeit still tragic, this seemed more reasonable than previously forecasted by media.
+Python with the Pandas and Facebook Prophet data was used to try to forecast the U.S. death toll and it was found to be in the range of 75,000 to 210,000 deaths, with a forecast line down the middle at around 140,000 eyeballing the graph. This can change day to day as more deaths are confirmed and hopefully decrease as doctors and healthcare workers find treatments that work. Albeit still tragic, this seemed more reasonable than previously forecasted by media.
 
-**On March 29th**, Fauci announced that 100,000 To 200,000 Americans could die from The Coronavirus. A forecast using FB Prophet with the John Hopkins seems to be inline. 
+**On March 29th**, Fauci announced that 100,000 to 200,000 Americans could die from the Coronavirus. A forecast using FB Prophet with the data from John Hopkins seems to be in line with each other. 
 
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
 # Sample Facebook Prophet COVID-19 Death Forecast
-Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly inline with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths. Forecast and Data Date: March 30th, 2020.
+Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths. Forecast and Data Date: March 30th, 2020.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 # Assumption
-**On March 3rd, 2020** Steve Goodman, a professor of epidemiology at Stanford University said “The infection numbers are almost meaningles. There’s a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
+**On March 3rd, 2020** Steve Goodman, a professor of epidemiology at Stanford University, said “The infection numbers are almost meaningles. There is a huge reservoir of people who have mild cases, and would not likely seek testing, he says. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus.".
 
 Was thinking maybe the infection data could be considered in the forecast somehow, but it seems Dr. Fauci's estimate of 100,000 to 200,000 deaths appears to be based on a linear regression of the death numbers. Death seems to be the only absolute when forecasting if the infection data is almost meaningless. 
 
