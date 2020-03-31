@@ -114,9 +114,8 @@ ORDER BY date ASC
     df['Date'] = pd.to_datetime(df['Date'])
 
     # Filter data by case type and country
-    df = df[(df.Case_Type == 'Confirmed') &
-            (df.Country_Region == 'US') &
-            (df.Table_Names == 'Time Series')]
+    df = df[(df.Case_Type == case_type) &
+            (df.Country_Region == country_region)]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
