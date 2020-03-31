@@ -3,9 +3,8 @@ This GIT repo contains a simple Python(3) script (stats.py) that can be used to 
 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
 
-Documentation for Facebook's Prophet library can be found at https://facebook.github.io/prophet/
-
-Documentation for Pandas can be found at https://pandas.pydata.org/docs/
+**Facebook's Prophet library Documentation:** https://facebook.github.io/prophet/
+**Pandas Documentation:** https://pandas.pydata.org/docs/
 
 # Abstract:
 **On March 15th, 2020**, the US Center for Disease Control and Prevention reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
