@@ -89,8 +89,7 @@ ORDER BY date ASC
 
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Deaths') &
-            (df.Country_Region == 'US') &
-            (df.Table_Names == 'Time Series')]
+            (df.Country_Region == 'US')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
