@@ -91,7 +91,7 @@ ORDER BY date ASC
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Deaths') &
             (df.Country_Region == 'US') &
-            df.Table_Names == 'Daily Summary']
+            (df.Table_Names == 'Daily Summary')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -116,7 +116,7 @@ ORDER BY date ASC
     # Filter data by case type and country
     df = df[(df.Case_Type == 'Confirmed') &
             (df.Country_Region == 'US') &
-            df.Table_Names == 'Daily Summary']
+            (df.Table_Names == 'Daily Summary')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -159,7 +159,7 @@ ORDER BY date ASC
 | 2020-03-27 | 1578 | 
 | 2020-03-28 | 2023 | 
 
-*Death sum is a daily running total and not the number of deaths reported for each day. Dataset has multiple datasets inline, but this is the query and results that align with the death count reported by the media.
+*Death sum is a daily running total and not the number of deaths reported for each day. Dataset has multiple datasets inline and need to filter on the 'Daily Summary' subset of data. These counts align with what the media is reporting.
 
 NPR: March 28, 202010:49 AM ET - More Than 2,000 Americans Have Now Died From The Coronavirus
 **Source:** https://www.npr.org/sections/coronavirus-live-updates/2020/03/28/823106901/confirmed-cases-of-coronavirus-crest-600-000-worldwide
@@ -236,7 +236,7 @@ def get_aggregate_covid_data_frame(df, case_type, country_region):
     # Filter data by case type and country
     df = df[(df.Case_Type == case_type) &
             (df.Country_Region == country_region) &
-            df.Table_Names == 'Daily Summary']
+            (df.Table_Names == 'Daily Summary')]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
@@ -346,6 +346,7 @@ def main():
 
 # Invoke main function
 main()
+
 
 ```
 
