@@ -124,7 +124,7 @@ ORDER BY date ASC
 ```
 
 ### Death Query Validation and Data Issue Note!
-<span style="color:red;"> Death sum is a daily running total and not the number of deaths reported for each day. Dataset has two ("Daily Summary" and "Time Series" datasets inline but these counts align with what the media is reporting. Some wonky data issue with data switching from Time Series to Daily Symmary, but filtering without filtering on Time Series or daily summary aligns with the media reports. Will research more later.
+<span style="color:red;"> Death sum is a daily running total and not the number of deaths reported for each day. Dataset has two ("Daily Summary" and "Time Series" datasets inline but these counts align with what the media is reporting. Some wonky data issue with data switching from Time Series to Daily Summary records, but filtering without filtering on Time Series or Daily Summary aligns with the media reports. Will research more later. Noticed that the Time Series subset has a date range of 2020-01-22 to 2020-03-22 and the Daily Summary subset has a date range of 2020-03-23 to 2020-03-30. That's a little whacky, but the stats look right doing an aggregate across both sub sets.  Validated my aggregates to what is being reported by the media and lines up count and date wise.
 </span>
 
 ### Results without filtering on Time Series or Daily Summary data subset filtering
