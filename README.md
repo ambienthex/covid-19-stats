@@ -84,14 +84,14 @@ Even though this forecast is in the range of 100,000 to 200,000 possible deaths 
 # Queries
 Using the data definiton above, we want to be able to filter records to group by date and sum case counts for deaths and infections seperately. 
 
-### SQL for Death Aggregate by Date
+### SQL for Death Sum Aggregate by Date
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Deaths'
 AND Country_Region = 'US'
 GROUP BY date
 ORDER BY date ASC
 
-### Pandas for Death Aggregate by Date
+### Pandas for Death Sum Aggregate by Date
 ```python
     # Convert date column to an actual datetime data type for sorting
     df['Date'] = pd.to_datetime(df['Date'])
@@ -107,7 +107,7 @@ ORDER BY date ASC
     df = df.sort_values(by='Date')
 ```
 
-### SQL for Infections Aggregate by Date
+### SQL for Infections Sum Aggregate by Date
 SELECT date, sum(Cases)
 WHERE Case_Type = 'Confirmed'
 AND Country_Region = 'US'
@@ -115,7 +115,7 @@ AND Table_Names = 'Daily Summary'
 GROUP BY date
 ORDER BY date ASC
 
-### Pandas for Infection Aggregate by Date
+### Pandas for Infection Sum Aggregate by Date
 ```python
     # Convert date column to an actual datetime data type for sorting
     df['Date'] = pd.to_datetime(df['Date'])
