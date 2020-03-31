@@ -125,7 +125,7 @@ ORDER BY date ASC
 ### Death Query Validation and Data Issue Note!
 *Death sum is a daily running total and not the number of deaths reported for each day. Dataset has two ("Daily Summary" and "Time Series" datasets inline but these counts align with what the media is reporting. Some wonky data issue with data switching from Time Series to Daily Symmary, but filtering without filtering on Time Series or daily summary aligns with the media reports.
 
-### Results without filtering on Time Series or daily summary
+### Results without filtering on Time Series or Daily Summary data subset filtering
 SELECT Date, sum(Cases)
 FROM covid_19_cases
 WHERE Case_Type = 'Deaths'
