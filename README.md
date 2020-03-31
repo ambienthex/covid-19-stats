@@ -14,7 +14,6 @@ Python with the Pandas, Facebook Prophet library and the John Hopkins COVID-19 c
 
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/faucibio.png)
 
 A simple forecast using FB Prophet with the data from John Hopkins seems to be about in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths.
 
