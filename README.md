@@ -3,7 +3,7 @@
 # Abstract:
 **On March 15th, 2020**, The US Center for Disease Control and Prevention data reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
 
-Source: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll-worst-case-scenario-millions-dead-in-us-a9402276.html
+**Source**: https://www.independent.co.uk/news/world/americas/coronavirus-death-toll-worst-case-scenario-millions-dead-in-us-a9402276.html
 
 Over a million deaths seemed too high of an estimate to me and wanted to attempt a basic forecast of the death toll myself without the epidemiology factors to determine whether that was simply media hyperbole. I found that Tableau is publishing COVID-19 virus data from John Hopkins to Data world. The data is updated daily at 9:00am EST and can be found at https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv.
 
@@ -11,7 +11,7 @@ Used Python with the Pandas and Facebook Prophet data to try the forecast the U.
 
 **On March 29th**, Fauci announced That 100,000 To 200,000 Americans Could Die From The Coronavirus. A forecast using FB Prophet with the John Hopkins seems to be inline. 
 
-Source: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
+**Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
 # Sample Facebook Prophet COVID-19 Death Forecast
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly inline with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths. Forecast and Data Date: March 30th, 2020.
@@ -24,7 +24,7 @@ Was thinking maybe the infection data could be considered in the forecast someho
 
 Even though a Facebook Prophet forecast with the John Hopkins case data set and the prediction of 100,000 to 200,000 deaths is in line, I'm a little more optimistic that doctors will find treatments that work. Maybe as more people gain some kind of immunity to the virus after falling ill and recovering, the infection rate will drop. My optimistic guesstimate forecast ignoring the forecast results is 50,000 to 100,000 U.S. deaths if the hospitatls are not overwhelmed and doctors and healthcare workers do not fall ill. 
 
-Source: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavirus-cases-is-an-almost-meaningless-metric
+**Source**: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavirus-cases-is-an-almost-meaningless-metric
 
 
 # Implementation
