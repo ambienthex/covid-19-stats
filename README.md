@@ -495,7 +495,7 @@ https://pandas.pydata.org/docs/
 * Ignore that last graph as there are no timestamps in the data. 
 
 # Conclusion
-This Python generated forecast seems to be in line with the official forecast of 100,000 to 200,000 U.S. possible deaths. Take this all with a grain of salt as I have no experience with epidemiology or any medical field. It does appear that the official death toll forecast was based on a forecast using linear regression on the daily death counts. Hoping the numbers will be much less. 
+This Python generated forecast seems to be in line with the official forecast of 100,000 to 200,000 U.S. possible deaths. Take this all with a grain of salt as I have no experience with epidemiology or any medical field. It does appear that the official death toll forecast was based on a forecast using adaptive linear regression on the daily death counts. Hoping the numbers will be much less. 
 
 Regardless of what this forecast shows, I'm slightly more optimistic with a range of 50,000 - 100,000 possible deaths if doctors and nurses don't fall ill, hospitals are not overwhelmed and effective treatments are found. The death toll could be way less. Believe healthcare workers and medical professionals will adapt and overcome to win the battle against COVID-19. Any loss of life is tragic and hope for the best. Stay safe, wash your hands and feel free to use and distribute this code however you wish. 
 
