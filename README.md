@@ -21,9 +21,10 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
 
 # Assumption
-**On March 3rd, 2020**, Steve Goodman, a professor of epidemiology at Stanford University, said, “The infection numbers are almost meaningless. There is a huge reservoir of people who have mild cases, and would not likely seek testing. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus."
 
-It was my speculation that perhaps the infection data could be considered in the forecast somehow, but it seems that Dr. Fauci's estimate of 100,000 to 200,000 deaths appears to be based on a linear regression of the death numbers. Death seems to be the only absolute when forecasting if the infection data is almost meaningless. 
+Thought I could use the infection data somehow in generating a forecast of possible deaths, but it's been reported to be almost meaningless and incomplete in determining the possible death count. Death seems to be the only absolute.  Appears Dr. Fauci's estimate was generated with linear regression on the aggregated daily death counts, so forecasting on the daily aggregated death counts to see how it compares.
+
+**On March 3rd, 2020**, Steve Goodman, a professor of epidemiology at Stanford University, said, “The infection numbers are almost meaningless. There is a huge reservoir of people who have mild cases, and would not likely seek testing. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus."
 
 Even though a Facebook Prophet forecast with the John Hopkins case data set and the prediction of 100,000 to 200,000 deaths is in line, I'm slightly more optimistic that given time, doctors will find treatments that work. Maybe as more people gain some kind of immunity to the virus after falling ill and recovering, the infection rate will drop. My optimistic guesstimate forecast ignoring the forecast results is 50,000 to 100,000 U.S. deaths if the hospitatls are not overwhelmed and doctors and healthcare workers do not fall ill. 
 
