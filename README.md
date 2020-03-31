@@ -191,7 +191,7 @@ def get_aggregate_covid_data_frame(df, case_type, country_region):
 
     # Filter data by case type and country
     df = df[(df.Case_Type == case_type) &
-            (df.Country_Region == country_region)
+            (df.Country_Region == country_region)]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
