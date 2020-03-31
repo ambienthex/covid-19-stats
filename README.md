@@ -121,6 +121,43 @@ ORDER BY date ASC
     df = df.sort_values(by='Date')
 ```
 
+### Death Query Validation:
+
+|            |      | 
+|------------|------| 
+| Date       | sum  | 
+| 2020-03-01 | 1    | 
+| 2020-03-02 | 6    | 
+| 2020-03-03 | 7    | 
+| 2020-03-04 | 11   | 
+| 2020-03-05 | 12   | 
+| 2020-03-06 | 14   | 
+| 2020-03-07 | 17   | 
+| 2020-03-08 | 21   | 
+| 2020-03-09 | 22   | 
+| 2020-03-10 | 28   | 
+| 2020-03-11 | 36   | 
+| 2020-03-12 | 40   | 
+| 2020-03-13 | 47   | 
+| 2020-03-14 | 54   | 
+| 2020-03-15 | 63   | 
+| 2020-03-16 | 85   | 
+| 2020-03-17 | 108  | 
+| 2020-03-18 | 118  | 
+| 2020-03-19 | 200  | 
+| 2020-03-20 | 244  | 
+| 2020-03-21 | 307  | 
+| 2020-03-22 | 416  | 
+| 2020-03-23 | 551  | 
+| 2020-03-24 | 705  | 
+| 2020-03-25 | 941  | 
+| 2020-03-26 | 1208 | 
+| 2020-03-27 | 1578 | 
+| 2020-03-28 | 2023 | 
+
+NPR: March 28, 202010:49 AM ET - More Than 2,000 Americans Have Now Died From The Coronavirus
+**Source:** https://www.npr.org/sections/coronavirus-live-updates/2020/03/28/823106901/confirmed-cases-of-coronavirus-crest-600-000-worldwide
+
 # Facebook Prophet Configuration
 
 Found that these settings match the predictions by Dr. Fauci best. 
