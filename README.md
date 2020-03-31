@@ -125,8 +125,10 @@ ORDER BY date ASC
     df = df.sort_values(by='Date')
 ```
 
-### Death Query Validation:
+### Death Query Validation and Data Issue Note!
+*Death sum is a daily running total and not the number of deaths reported for each day. Dataset has multiple datasets inlinem but these counts align with what the media is reporting. Some wonky data issue with data switching from Time Series to Daily Symmary, but filtering without filtering on Time Series or daily summary aligns with the media reports.
 
+### Results without filtering on Time Series or daily summary
 |            |      | 
 |------------|------| 
 | Date       | sum  | 
@@ -157,12 +159,111 @@ ORDER BY date ASC
 | 2020-03-25 | 941  | 
 | 2020-03-26 | 1208 | 
 | 2020-03-27 | 1578 | 
-| 2020-03-28 | 2023 | 
-
-*Death sum is a daily running total and not the number of deaths reported for each day. Dataset has multiple datasets inline and need to filter on the 'Daily Summary' subset of data. These counts align with what the media is reporting.
+| **2020-03-28** | **2023** | 
+| 2020-03-29 | 2464 |
+| 2020-03-30 | 2975 ]
 
 NPR: March 28, 202010:49 AM ET - More Than 2,000 Americans Have Now Died From The Coronavirus
 **Source:** https://www.npr.org/sections/coronavirus-live-updates/2020/03/28/823106901/confirmed-cases-of-coronavirus-crest-600-000-worldwide
+
+### Results with just the Time Series Data Subset of Data
+
+SELECT Date, sum(Cases)
+FROM covid_19_cases
+WHERE Case_Type = 'Deaths'
+AND Country_Region = 'US'
+AND Table_Names = 'Time Series'
+GROUP BY Date
+ORDER BY Date ASC
+
+|            |     | 
+|------------|-----| 
+| Date       | sum | 
+| 2020-01-22 | 0   | 
+| 2020-01-23 | 0   | 
+| 2020-01-24 | 0   | 
+| 2020-01-25 | 0   | 
+| 2020-01-26 | 0   | 
+| 2020-01-27 | 0   | 
+| 2020-01-28 | 0   | 
+| 2020-01-29 | 0   | 
+| 2020-01-30 | 0   | 
+| 2020-01-31 | 0   | 
+| 2020-02-01 | 0   | 
+| 2020-02-02 | 0   | 
+| 2020-02-03 | 0   | 
+| 2020-02-04 | 0   | 
+| 2020-02-05 | 0   | 
+| 2020-02-06 | 0   | 
+| 2020-02-07 | 0   | 
+| 2020-02-08 | 0   | 
+| 2020-02-09 | 0   | 
+| 2020-02-10 | 0   | 
+| 2020-02-11 | 0   | 
+| 2020-02-12 | 0   | 
+| 2020-02-13 | 0   | 
+| 2020-02-14 | 0   | 
+| 2020-02-15 | 0   | 
+| 2020-02-16 | 0   | 
+| 2020-02-17 | 0   | 
+| 2020-02-18 | 0   | 
+| 2020-02-19 | 0   | 
+| 2020-02-20 | 0   | 
+| 2020-02-21 | 0   | 
+| 2020-02-22 | 0   | 
+| 2020-02-23 | 0   | 
+| 2020-02-24 | 0   | 
+| 2020-02-25 | 0   | 
+| 2020-02-26 | 0   | 
+| 2020-02-27 | 0   | 
+| 2020-02-28 | 0   | 
+| 2020-02-29 | 1   | 
+| 2020-03-01 | 1   | 
+| 2020-03-02 | 6   | 
+| 2020-03-03 | 7   | 
+| 2020-03-04 | 11  | 
+| 2020-03-05 | 12  | 
+| 2020-03-06 | 14  | 
+| 2020-03-07 | 17  | 
+| 2020-03-08 | 21  | 
+| 2020-03-09 | 22  | 
+| 2020-03-10 | 28  | 
+| 2020-03-11 | 36  | 
+| 2020-03-12 | 40  | 
+| 2020-03-13 | 47  | 
+| 2020-03-14 | 54  | 
+| 2020-03-15 | 63  | 
+| 2020-03-16 | 85  | 
+| 2020-03-17 | 108 | 
+| 2020-03-18 | 118 | 
+| 2020-03-19 | 200 | 
+| 2020-03-20 | 244 | 
+| 2020-03-21 | 307 | 
+| 2020-03-22 | 416 | 
+
+
+
+### Results with just the Daily Summary Subset of Data
+SELECT Date, sum(Cases)
+FROM covid_19_cases
+WHERE Case_Type = 'Deaths'
+AND Country_Region = 'US'
+AND Table_Names = 'Daily Summary'
+GROUP BY Date
+ORDER BY Date ASC
+
+|            |      | 
+|------------|------| 
+| Date       | sum  | 
+| 2020-03-23 | 551  | 
+| 2020-03-24 | 705  | 
+| 2020-03-25 | 941  | 
+| 2020-03-26 | 1208 | 
+| 2020-03-27 | 1578 | 
+| 2020-03-28 | 2023 | 
+| 2020-03-29 | 2464 | 
+| 2020-03-30 | 2975 | 
+
 
 # Facebook Prophet Configuration
 
