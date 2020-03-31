@@ -123,7 +123,7 @@ ORDER BY date ASC
     df = df.sort_values(by='Date')
 ```
 
-### Death Query Validation and Data Issue Note!
+### Death Query Validation and Data Issue Notes!
 <span style="color:red;"> Death sum is a daily running total and not the number of deaths reported for each day. Dataset has two ("Daily Summary" and "Time Series" datasets) inline indicated by the Table_Names field value ("Daily Summary" or "Time Series"),  but these counts align with what the media is reporting without filtering on Time Series or Daily Summary. Noticed that the Time Series subset has a date range of 2020-01-22 to 2020-03-22 and the Daily Summary subset has a date range of 2020-03-23 to 2020-03-30. That's a little whacky, but the stats look right doing an aggregate across both sub sets.  Validated my aggregates to what is being reported by the media and lines up count and date wise. Will research more later, but probably just a data format change. Not sure. See the data validation below.
 
 Also, On March 24, John Hopkins University stopped providing data on recovered cases due to a lack of confidence in the data. This means that we’re no longer able to differentiate between active and recovered cases in the total case data, so we have removed those values from the dataset. This is a permanent change. Maybe because people are recovering and then falling ill again. Who knows, but it would be nice to be able to have access to this data.
