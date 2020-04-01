@@ -1,5 +1,5 @@
 # Project: U.S. COVID-19 Virus Forecasting
-This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins University. The stats.py script will pull the current John Hopkins COVID-19 CSV case data (updated daily at 9a.m.), transform and aggregate the data using Pandas, and generate a forecast using Facebook's Prophet library. Output is two forecast graphs for deaths and infections and two line graphs for deaths and infection counts. After running the stats.py script, can launch "covid-19-stats.htm" in a browser to see all the graphs together. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run.
+This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins University. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. Output is two forecast graphs for deaths and infections, two line graphs for deaths and infection counts and the raw downloaded case data. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run. After running the stats.py script, you can launch "covid-19-stats.htm" in a browser to see all the graphs together. 
 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
 
@@ -38,13 +38,13 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 
 **Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
 
-This somewhat confirms they are doing a regression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of daily death counts grouped by day.. Here's the updated forecast using this code for March 31st. Again, this forecast is about inline still. 
+This somewhat confirms they are doing a regression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of daily death counts grouped by date. Here's the updated forecast using this code for March 31st. Again, this forecast is about inline still. 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
 
 
 # Assumptions
 
-Thought I could use the infection case data with the death case data somehow in generating a forecast of possible deaths, but it's been reported that the infection data is almost meaningless to epidemiologists and incomplete. Death seems to be the only absolute in the data. It appears Dr. Fauci's estimate was possibly generated withregression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of daily death counts grouped by day, so giving it a go with Facebook Prophet to see how it compares and it's in the range. They may have done something different. Who knows, but it nearly matches official forecasts that are changing day to day.
+Thought I could use the infection case data with the death case data somehow in generating a forecast of possible deaths, but it's been reported that the infection data is almost meaningless to epidemiologists and incomplete. Death seems to be the only absolute in the data. It appears Dr. Fauci's estimate was possibly generated withregression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of daily death counts grouped by date, so giving it a go with Facebook Prophet to see how it compares and it's in the range. They may have done something different. Who knows, but it nearly matches official forecasts that are changing day to day.
 
 **On March 3rd, 2020**, Steve Goodman, a professor of epidemiology at Stanford University, said, “The infection numbers are almost meaningless. There is a huge reservoir of people who have mild cases, and would not likely seek testing. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus."
 
