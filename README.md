@@ -485,7 +485,7 @@ https://pandas.pydata.org/docs/
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
 
 ## Infection Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
 
 # Conclusion
 This Python generated forecast seems to be in line with the official forecast of 100,000 to 200,000 U.S. possible deaths. Take this all with a grain of salt as I have no experience with epidemiology or any medical field. It does appear that the official death toll forecast was based on a forecast using adaptive linear regression on the daily death counts. Hoping the numbers will be much less. 
