@@ -565,11 +565,3 @@ https://facebook.github.io/prophet/docs/installation.html
 Pandas Documentation:
 https://pandas.pydata.org/docs/
 
-# Sample Output as of March 30th, 2020 data:
-
-## Death Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
-
-## Infection Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
-
