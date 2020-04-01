@@ -15,6 +15,10 @@
 # Facebook Prophet forecasting / time series predictions Library
 from fbprophet import Prophet
 
+# MATLAB like plotting library
+import matplotlib.patches as mpatches
+import matplotlib.pyplot as plt
+
 # Python Data Analysis Library
 import pandas as pd
 
@@ -48,7 +52,7 @@ def get_aggregate_covid_data_frame(df, case_type, country_region):
     return df
 
 
-def forecast(df, forecast_output_filename, forecast_component_output_filename):
+def forecast(df, forecast_output_filename, title, x_label, y_label):
 
     # changepoint_prior_scale / Adjusting trend flexibility:
     # If the trend changes are being overfit (too much flexibility) or underfit
@@ -100,7 +104,7 @@ def forecast(df, forecast_output_filename, forecast_component_output_filename):
     # dataframe that extends into the future a specified number of days using
     # the helper method Prophet.make_future_dataframe. By default it will also
     # include the dates from the history, so we will see the model fit as well.
-    future = model.make_future_dataframe(periods=360)
+    future = model.make_future_dataframe(periods=365)
 
     # The predict method will assign each row in future a predicted value
     # which it names yhat. If you pass in historical dates, it will provide an
@@ -110,19 +114,75 @@ def forecast(df, forecast_output_filename, forecast_component_output_filename):
     forecast = model.predict(future)
 
     # Plot the forecast and save it to the specified output file name
-    model.plot(forecast).savefig(forecast_output_filename)
+    fig = model.plot(forecast)
 
-    # Plot the forecast components (seasonality graphs) and
-    # save to specified output file name
-    model.plot_components(forecast).savefig(forecast_component_output_filename)
+    #Get the current Axes instance on the current figure
+    ax = plt.gca()
+
+    # Set graph title
+    ax.set_title(title, size=18)
+
+    # Set x and y axis labels
+    ax.set_ylabel(y_label)
+    ax.set_xlabel(x_label)
+
+    # Set plot line colors
+    ax.get_lines()[0].set_color("black")
+    ax.get_lines()[1].set_color("r")
+
+    # Add logo badge to graph
+    logo = plt.imread('badge.gif')
+    ax.figure.figimage(logo, 300, 425, alpha=.75, zorder=1)
+
+    # Disables exponent / scientific notation
+    plt.ticklabel_format(style='plain', axis='y')
+
+    # Automatically adjust subplot parameters to give specified padding.
+    fig.tight_layout()
+
+    # Save the figure
+    fig.savefig(forecast_output_filename)
 
     # Return the model
     return model
 
 
+def output_plot(df, img_output_file, graph_kind, x_field, y_field,
+                x_label, y_label, line_color, title):
+
+    # Set figure plot size
+    plt.rcParams["figure.figsize"] = [10, 5]
+
+    # Output a plot / graph with the specified data frame and output and params
+    fig = df.plot(kind=graph_kind, x=x_field, y=y_field,
+                  grid=True, color=line_color)
+
+    # Set graph title
+    plt.title(title)
+
+    # Set x and y axis labels
+    fig.set_xlabel(x_label)
+    fig.set_ylabel(y_label)
+
+    # Update legend color and title
+    red_patch = mpatches.Patch(label=y_label, color=line_color)
+    plt.legend(handles=[red_patch])
+    plt.legend(facecolor="white")
+    plt.legend().get_texts()[0].set_text(y_label)
+    # Disables exponent / scientific notation
+    plt.ticklabel_format(style='plain', axis='y')
+
+    # Automatically adjust subplot parameters to give specified padding.
+    plt.tight_layout()
+
+    # Save the figure
+    plt.savefig(img_output_file)
+
+
 def main():
     # URL used to fetch COVID-19 case data in CSV format
     data_url = 'https://query.data.world/s/js7bdacf5rurkiql7nioreohprqtdx'
+    data_url = 'covid-case-data.csv'
 
     # Read CSV file from file name or URL
     df = pd.read_csv(data_url)
@@ -134,15 +194,28 @@ def main():
     # summed by Deaths in the U.S.
     df_deaths = get_aggregate_covid_data_frame(df, 'Deaths', 'US')
 
-    # Generate the FB Prophet forecast for deaths and output forecast images
-    forecast(df_deaths, 'deaths.png', 'deaths-components.png')
-
     # Get aggregated COVID-19 data grouped by date and
     # summed by Infections in the U.S.
-    df_conf = get_aggregate_covid_data_frame(df, 'Confirmed', 'US')
+    df_inf = get_aggregate_covid_data_frame(df, 'Confirmed', 'US')
+
+    # Output line graph of current death counts by date
+    output_plot(df_deaths, 'covid-19-deaths-line-graph.png', 'line',
+                'Date', 'Cases', 'Date', 'Death Count', 'r',
+                'U.S. COVID-19 Death Count')
+
+    # Output line graph of current infection counts by date
+    output_plot(df_inf, 'covid-19-infections-line-graph.png', 'line',
+                'Date', 'Cases', 'Date', 'Infection Count', 'g',
+                'U.S. COVID-19 Infection Count')
 
     # Generate the FB Prophet forecast for deaths and output forecast images
-    forecast(df_conf, 'infections.png', 'infection-components.png')
+    forecast(df_deaths, 'covid-19-death-forecast.png',
+             'U.S. Covid-19 Death Forecast', 'Date', 'Deaths')
+
+    # Generate the FB Prophet forecast for deaths and output forecast images
+    forecast(df_inf, 'covid-19-infection-forecast.png',
+             'U.S. Covid-19 Infection Forecast', 'Date', 'Infections')
+
 
 # Invoke main function
 main()
