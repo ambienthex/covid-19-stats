@@ -1,5 +1,5 @@
 # Project: U.S. COVID-19 Virus Forecasting
-This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins University. The stats.py script will pull the current John Hopkins COVID-19 CSV case data (updated daily at 9a.m.), transform and aggregate the data using Pandas, and generate a forecast using Facebook's Prophet library. Output is two forecast graphs for deaths and infections and two line graphs for deaths and infection counts. After running the stats.py script, can launch "covid-19-stats.htm" in a browser to see all the graphs together.
+This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins University. The stats.py script will pull the current John Hopkins COVID-19 CSV case data (updated daily at 9a.m.), transform and aggregate the data using Pandas, and generate a forecast using Facebook's Prophet library. Output is two forecast graphs for deaths and infections and two line graphs for deaths and infection counts. After running the stats.py script, can launch "covid-19-stats.htm" in a browser to see all the graphs together. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run.
 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
 
@@ -558,6 +558,7 @@ main()
 6. python3 stats.py
 7. Output is four image files (deaths.png, death-components.png, infections.png and infections-components.png).
 8. After running the stats.py script, can launch "covid-19-stats.htm" in a browser to see all the graphs together.
+9. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run.
 
 Facebook Prophet can be a pain to setup sometime. Refer to Facebook Prophet's documentation if you run into issues:
 https://facebook.github.io/prophet/docs/installation.html
