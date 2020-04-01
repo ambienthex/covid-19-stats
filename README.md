@@ -1,9 +1,7 @@
 # Project: U.S. COVID-19 Virus Forecasting
-This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins University. The stats.py script will pull the current John Hopkins COVID-19 CSV case data (updated daily at 9a.m.), transform and aggregate the data using Pandas, and generate a forecast using Facebook's Prophet library. Output is four forecast graphs in a PNG image file format. 
+This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins University. The stats.py script will pull the current John Hopkins COVID-19 CSV case data (updated daily at 9a.m.), transform and aggregate the data using Pandas, and generate a forecast using Facebook's Prophet library. Output is two forecast graphs for deaths and infections and two line graphs for deaths and infection counts. 
 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
-
-Adding some more graphs and reports in the next day or two. May implement the raw linear regression code for comparison against Facebook Prophet.
 
 **Facebook's Prophet Documentation:** https://facebook.github.io/prophet/
 
@@ -28,6 +26,18 @@ A simple forecast using FB Prophet with the data from John Hopkins University se
 # Sample Facebook Prophet COVID-19 Death Forecast
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths as of March 29th, 2020.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.jpg)
+
+# Death Count Graph as of March 31st, 2020
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-line-graph.png)
+
+# Infection Count Graph as of March 31st, 2020
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-line-graph.png)
+
+**On March 29th**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
+
+**Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
+
+
 
 # Assumptions
 
@@ -482,18 +492,10 @@ https://pandas.pydata.org/docs/
 # Sample Output as of March 30th, 2020 data:
 
 ## Death Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.png)
-
-## Death Forecast Components
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths-components.png)
-* Ignore that last graph as there are no timestamps in the data. 
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
 
 ## Infection Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infections.png)
-
-## Infection Forecast Components
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/infection-components.png)
-* Ignore that last graph as there are no timestamps in the data. 
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
 
 # Conclusion
 This Python generated forecast seems to be in line with the official forecast of 100,000 to 200,000 U.S. possible deaths. Take this all with a grain of salt as I have no experience with epidemiology or any medical field. It does appear that the official death toll forecast was based on a forecast using adaptive linear regression on the daily death counts. Hoping the numbers will be much less. 
