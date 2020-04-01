@@ -33,6 +33,12 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 # Infection Count Graph as of March 31st, 2020
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-line-graph.png)
 
+**On March 29th**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
+
+**Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
+
+
+
 # Assumptions
 
 Thought I could use the infection case data with the death case data somehow in generating a forecast of possible deaths, but it's been reported that the infection data is almost meaningless to epidemiologists and incomplete. Death seems to be the only absolute in the data. It appears Dr. Fauci's estimate was possibly generated with adaptive linear regression on the aggregated daily death counts, so forecasting on the daily aggregated death counts alone to see how it compares and it's in the range. They may have done something more complicated. Who knows.
