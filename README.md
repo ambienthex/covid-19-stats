@@ -38,13 +38,13 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 
 **Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
 
-This somewhat confirms they are doing linear regression on the aggregate sum of death counts by day. Here's the updated forecast using this code for March 31st. Again, this forecast is about inline still. 
+This somewhat confirms they are doing a regression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of death counts by day. Here's the updated forecast using this code for March 31st. Again, this forecast is about inline still. 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
 
 
 # Assumptions
 
-Thought I could use the infection case data with the death case data somehow in generating a forecast of possible deaths, but it's been reported that the infection data is almost meaningless to epidemiologists and incomplete. Death seems to be the only absolute in the data. It appears Dr. Fauci's estimate was possibly generated with adaptive linear regression on the aggregated daily death counts, so forecasting on the daily aggregated death counts alone to see how it compares and it's in the range. They may have done something more complicated. Who knows.
+Thought I could use the infection case data with the death case data somehow in generating a forecast of possible deaths, but it's been reported that the infection data is almost meaningless to epidemiologists and incomplete. Death seems to be the only absolute in the data. It appears Dr. Fauci's estimate was possibly generated with regression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast, so giving it a go with Facebook Prophet to see how it compares and it's in the range. They may have done something different. Who knows, but it nearly matches official forecasts that are changing day to day.
 
 **On March 3rd, 2020**, Steve Goodman, a professor of epidemiology at Stanford University, said, “The infection numbers are almost meaningless. There is a huge reservoir of people who have mild cases, and would not likely seek testing. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus."
 
