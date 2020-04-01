@@ -35,13 +35,11 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
 
-This somewhat confirms they are doing linear regression on the aggregate sum of death counts by day. Here's the updated forecast using this code for March 31st. Again, this forecast is about inline still. 
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
-
-
 
 **Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
 
+This somewhat confirms they are doing linear regression on the aggregate sum of death counts by day. Here's the updated forecast using this code for March 31st. Again, this forecast is about inline still. 
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
 
 
 # Assumptions
