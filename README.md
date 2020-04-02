@@ -33,7 +33,7 @@ Python with the Pandas, Facebook Prophet library and the John Hopkins University
 A simple forecast using FB Prophet with the data from John Hopkins University seems to be about in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths.
 
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths as of March 29th, 2020.
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.jpg)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-29.jpg)
 
 # Facebook Prophet COVID-19 U.S. Death Forecast
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
