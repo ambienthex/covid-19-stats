@@ -27,11 +27,17 @@ A simple forecast using FB Prophet with the data from John Hopkins University se
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths as of March 29th, 2020.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.jpg)
 
-# Running Total Death Count Graph as of March 31st, 2020
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-line-graph.png)
+# Running Total Death Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-deaths-running-total-line-graph.png)
 
-# Running Total Infection Count Graph as of March 31st, 2020
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-line-graph.png)
+# Daily Death Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-deaths-by-day-line-graph.png)
+
+# Running Total Infection Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-running-total-line-graph.png)
+
+# Daily Infection Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
 
