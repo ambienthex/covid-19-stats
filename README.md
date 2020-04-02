@@ -28,10 +28,10 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.jpg)
 
 # Running Total Death Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-deaths-running-total-line-graph.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-running-total-line-graph.png)
 
 # Daily Death Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-deaths-by-day-line-graph.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-by-day-line-graph.png)
 
 # Running Total Infection Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-running-total-line-graph.png)
