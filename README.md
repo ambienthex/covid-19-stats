@@ -36,6 +36,21 @@ Keep in mind the forecast can change for better or worse as new case data is add
 ## Daily U.S.Infection Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
 
+**April 2nd, 2020**
+World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something of comparison regarding mortality.  Death count is more than likely lower with the extreme measures we are taken, but I'm feeling a lot more optimistic about all of this.  These are the official numbers and not my assumption. Extreme measures maybe.
+
+```sql
+SELECT date, sum(Cases) deaths
+FROM covid_19_cases
+Where case_type = 'Deaths'
+AND date = '2020-04-01'
+group by date
+order by date
+RESULT: 46,806 COVID deaths.
+```
+
+**Note**: Cases are cumulative / additive. This is the correct query to get the global total death count in the John Hopkins dataset.  Included the link to the raw data if you want to try it yourself and review. Read the documentation on the dataset and this is correct.
+
 
 # Abstract:
 **On March 15th, 2020**, the US Center for Disease Control and Prevention reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
