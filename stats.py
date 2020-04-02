@@ -334,7 +334,7 @@ def main(argv):
 
     # URL used to fetch COVID-19 case data in CSV format
     data_url = 'https://query.data.world/s/js7bdacf5rurkiql7nioreohprqtdx'
-    data_url = 'covid-case-data.csv'
+    # data_url = 'covid-case-data.csv'
 
     # Read CSV file from file name or URL
     df = pd.read_csv(data_url)
