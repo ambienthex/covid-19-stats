@@ -20,23 +20,27 @@ Python with the Pandas, Facebook Prophet library and the John Hopkins University
 
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
-
 A simple forecast using FB Prophet with the data from John Hopkins University seems to be about in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths.
 
-# Sample Facebook Prophet COVID-19 Death Forecast
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths as of March 29th, 2020.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/deaths.jpg)
 
-# Running Total Death Count Graph
+# Facebook Prophet COVID-19 U.S. Death Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
+
+# Facebook Prophet COVID-19 U.S. Infection Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
+
+# Running Total U.S. Death Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-running-total-line-graph.png)
 
-# Daily Death Count Graph
+# Daily U.S. Death Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-by-day-line-graph.png)
 
-# Running Total Infection Count Graph
+# Running Total U.S. Infection Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-running-total-line-graph.png)
 
-# Daily Infection Count Graph
+# Daily U.S.Infection Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
