@@ -1,5 +1,7 @@
 # Project: U.S. COVID-19 Virus Forecasting
-This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast U.S. COVID-19 deaths and infections using case data from John Hopkins University. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. Output is two forecast graphs for deaths and infections, two line graphs for deaths and infection counts and the raw downloaded case data. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run. After running the stats.py script, you can launch "covid-19-stats.htm" in a browser to see all the graphs together. 
+This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast COVID-19 deaths and infections by country and state using case data from John Hopkins University. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. Output is two forecast graphs for deaths and infections, four line graphs (running total and daily counts) for deaths and infection counts and the raw downloaded case data. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run. After running the stats.py script, you can launch "covid-19-stats.htm" in a browser to see all the graphs together. 
+
+Can also filter by country using the -c option (e.g. python3 stats.py -c "US"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York").
 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
 
@@ -719,7 +721,7 @@ if __name__ == "__main__":
 7. Output is four image files (deaths.png, death-components.png, infections.png and infections-components.png).
 8. After running the stats.py script, can launch "covid-19-stats.htm" in a browser to see all the graphs together.
 9. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run.
-
+10. Can also filter by country using the -c option (e.g. python3 stats.py -c "US"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York").
 Facebook Prophet can be a pain to setup sometime. Refer to Facebook Prophet's documentation if you run into issues:
 https://facebook.github.io/prophet/docs/installation.html
 
