@@ -336,6 +336,9 @@ Date will sort alphanumerically if you don't explicity set the data type to Date
 
 ```python
 #!/usr/bin/python
+
+"""Return a Covid-19 dataframe filtered with specified criteria."""
+
 # Forecasting of corona virus deaths
 # Notes:
 # 1. Use python3
@@ -347,7 +350,50 @@ Date will sort alphanumerically if you don't explicity set the data type to Date
 # Data Source Notes:
 # COVID-19 Data Research repository from Johns Hopkins University
 # Tableau publishes this data to Data World daily.
-# URL: https://data.world/covid-19-data-resource-hub/covid-19-case-counts/workspace/file?filename=COVID-19+Cases.csv
+# URL: https://data.world/covid-19-data-resource-hub/covid-19-case-counts/
+# workspace/file?filename=COVID-19+Cases.csv
+
+# Command Line Options
+# -c or --country; Optionally specifies a country to perform stats against.
+# -p or --province: Optionally specifies state or province to perform stats.
+# -cl: Displays list of valid country names
+# -pl: Displays list of valid provinces for the specified country(-c)
+#   Example:
+#     parser.add_argument('-c', '--country',
+#
+# Note; -pl only works with US at this time.
+#
+# Valid Country Names;
+# All, Afghanistan, Albania, Algeria, Andorra, Angola, Antigua and Barbuda,
+# Argentina, Armenia, Australia, Austria, Azerbaijan, Bahamas, Bahrain,
+# Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia,
+# Bosnia and Herzegovina, Botswana, Brazil, Brunei, Bulgaria, Burkina Faso,
+# Burma, Burundi, Cabo Verde, Cambodia, Cameroon, Canada,
+# Central African Republic, Chad, Chile, China, Colombia, Congo (Brazzaville),
+# Congo (Kinshasa), Costa Rica, Cote d'Ivoire, Croatia, Cruise Ship, Cuba,
+# Cyprus, Czechia, Denmark, Djibouti, Dominica, Dominican Republic, Ecuador,
+# Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Eswatini, Ethiopia,
+# Fiji, Finland, France, Gabon, Gambia, Georgia, Germany, Ghana, Greece,
+# Grenada, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Holy See,
+# Honduras, Hungary, Iceland, India, Indonesia, Iran, Iraq, Ireland,
+# Israel, Italy, Jamaica, Japan, Jordan, Kazakhstan, Kenya, 'Korea, South",
+# Kosovo, Kuwait, Kyrgyzstan, Laos, Latvia, Lebanon, Liberia, Libya,
+# Liechtenstein, Lithuania, Luxembourg, Madagascar, Malaysia, Maldives,
+# Mali, Malta, Mauritania, Mauritius, Mexico, Moldova, Monaco, Mongolia,
+# Montenegro, Morocco, Mozambique, Namibia, Nepal, Netherlands,
+# New Zealand, Nicaragua, Niger, Nigeria, North Macedonia, Norway, Oman,
+# Pakistan, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Poland,
+# Portugal, Qatar, Romania, Russia, Rwanda, Saint Kitts and Nevis, Saint Lucia,
+# Saint Vincent and the Grenadines, San Marino, Saudi Arabia, Senegal, Serbia,
+# Seychelles, Sierra Leone, Singapore, Slovakia, Slovenia, Somalia,
+# South Africa, Spain, Sri Lanka, Sudan, Suriname, Sweden, Switzerland,
+# Syria, Taiwan*, Tanzania, Thailand, Timor-Leste, Togo, Trinidad and Tobago,
+# Tunisia, Turkey, US, Uganda, Ukraine, United Arab Emirates, United Kingdom
+# Uruguay, Uzbekistan, Venezuela, Vietnam, West Bank and Gaza, Zambia, Zimbabwe
+import sys
+
+# Parser for command-line options
+import argparse
 
 # Facebook Prophet forecasting / time series predictions Library
 from fbprophet import Prophet
@@ -360,27 +406,41 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def get_aggregate_covid_data_frame(df, case_type, country_region):
-    # Returns a Covid-19 dataframe filtered by the specified
-    # case type and country_region.
+def get_aggregate_covid_data_frame(df, case_type, sum_field,
+                                   country_region=None,
+                                   province_state=None):
+    """Return a Covid-19 dataframe filtered with specified criteria.
 
-    # The SQL equivilant for this Pandas code is equivalent to:
-    # SELECT date, sum(Cases)
-    # WHERE Case_Type = [case_type]
-    # AND Country_Region = [country_region]
-    # GROUP BY date
-    # ORDER BY date ASC
+    Case type can be Confirmed or Deaths
+    Sum field can be Cases or Difference
+    The SQL equivilant for this Pandas code is equivalent to:
+    SELECT date, sum(Cases)
+    WHERE Case_Type = [case_type]
+    AND Country_Region = [country_region]
+    GROUP BY date
+    ORDER BY date ASC.
+    """
     df = df.copy()
 
     # Convert date column to an actual datetime data type for sorting
     df['Date'] = pd.to_datetime(df['Date'])
+
+    # Dynamically build query criteria
+    criteria = '(Case_Type == "' + case_type + '")'
+    if (country_region):
+        criteria += ' & (Country_Region == "' + country_region + '")'
+    if (province_state):
+        criteria += ' & (Province_State == "' + province_state + '")'
+
+    # Get data frame with a query using the dynamic criteria
+    df = df.query(criteria)
 
     # Filter data by case type and country
     df = df[(df.Case_Type == case_type) &
             (df.Country_Region == country_region)]
 
     # Group data by date and aggregate sum of cases
-    df = df[['Date', 'Cases']].groupby(['Date'], as_index=False).sum()
+    df = df[['Date', sum_field]].groupby(['Date'], as_index=False).sum()
 
     # Sort data by date ascending
     df = df.sort_values(by='Date')
@@ -390,7 +450,7 @@ def get_aggregate_covid_data_frame(df, case_type, country_region):
 
 
 def forecast(df, forecast_output_filename, title, x_label, y_label):
-
+    """Return a Covid-19 dataframe filtered with specified criteria."""
     # changepoint_prior_scale / Adjusting trend flexibility:
     # If the trend changes are being overfit (too much flexibility) or underfit
     # (not enough flexibility),you can adjust the strength of the sparse prior
@@ -418,6 +478,7 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
 
     # Instantiate a new Prophet object with params best suited for daily
     # seasonalitty of COVID-19 virus case data.
+
     model = Prophet(
         changepoint_prior_scale=0.2,
         changepoint_range=0.95,
@@ -453,7 +514,7 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
     # Plot the forecast and save it to the specified output file name
     fig = model.plot(forecast)
 
-    #Get the current Axes instance on the current figure
+    # Get the current Axes instance on the current figure
     ax = plt.gca()
 
     # Set graph title
@@ -486,7 +547,7 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
 
 def output_plot(df, img_output_file, graph_kind, x_field, y_field,
                 x_label, y_label, line_color, title):
-
+    """Output a plot image using the specified data frame and args."""
     # Set figure plot size
     plt.rcParams["figure.figsize"] = [10, 5]
 
@@ -516,46 +577,127 @@ def output_plot(df, img_output_file, graph_kind, x_field, y_field,
     plt.savefig(img_output_file)
 
 
-def main():
+def output_graph_set_by_country(df, country, province=None):
+    """Output graph set by country."""
+    # Get aggregated COVID-19 data grouped by date and
+    # summed by Deaths in the U.S. Running total.
+    df_running_total_deaths = get_aggregate_covid_data_frame(df, 'Deaths',
+                                                             'Cases', country,
+                                                             province)
+
+    # Get aggregated COVID-19 data grouped by date and
+    # summed by Infections in the U.S. Running total.
+    df_running_total_inf = get_aggregate_covid_data_frame(df, 'Confirmed',
+                                                          'Cases', country,
+                                                          province)
+
+    # Get aggregated daily COVID-19 infection data grouped by date and
+    # summed by Infections in the U.S
+    df_daily_deaths = get_aggregate_covid_data_frame(df, 'Deaths',
+                                                     'Difference', country,
+                                                     province)
+
+    # Get aggregated daily COVID-19 infection data grouped by date and
+    # summed by Infections in the U.S.
+    df_daily_inf = get_aggregate_covid_data_frame(df, 'Confirmed',
+                                                      'Difference', country,
+                                                      province)
+
+    location = province + ', ' + country if province else country
+
+    # Output line graph of current death counts by date
+    output_plot(df_running_total_deaths,
+                'covid-19-deaths-running-total-line-graph.png',
+                'line', 'Date', 'Cases', 'Date', 'Death Count', 'r',
+                location + ' COVID-19 Running Total Death Count')
+
+    # Output line graph of current infection counts by date
+    output_plot(df_running_total_inf,
+                'covid-19-infections-running-total-line-graph.png',
+                'line', 'Date', 'Cases', 'Date', 'Infection Count', 'g',
+                location + ' COVID-19 Running Total Infection Count')
+
+    # Output line graph of current death counts by date
+    output_plot(df_daily_deaths, 'covid-19-deaths-by-day-line-graph.png',
+                'line', 'Date', 'Difference', 'Date', 'Death Count', 'r',
+                location + ' COVID-19 Deaths per Day')
+
+    # Output line graph of current infection counts by date
+    output_plot(df_daily_inf, 'covid-19-infections-by-day-line-graph.png',
+                'line', 'Date', 'Difference', 'Date', 'Infection Count', 'g',
+                location + ' COVID-19 Infections per Day')
+
+    # Generate the FB Prophet forecast for deaths and output forecast images
+    forecast(df_running_total_deaths, 'covid-19-death-forecast.png',
+             location + ' Covid-19 Death Forecast', 'Date', 'Deaths')
+
+    # Generate the FB Prophet forecast for infections and o
+    # utput forecast images
+    forecast(df_running_total_inf, 'covid-19-infection-forecast.png',
+             location + ' Covid-19 Infection Forecast', 'Date', 'Infections')
+
+
+def get_countries(df):
+    """Return data frame of unique countries."""
+    df_countries = df['Country_Region'].unique()
+    return sorted(df_countries)
+
+
+def get_provinces_for_country(df, country):
+    """Return data frame of unique countries."""
+    criteria = '(Country_Region == "' + country + '")'
+
+    # Get data frame with a query using the dynamic criteria
+    df = df.query(criteria)
+    df_provinces = df['Province_State'].unique()
+    return sorted(df_provinces)
+
+
+def main(argv):
+    """Main function."""
+    country = 'US'
+    province = None
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--country',
+                        help="sets country filter for COVID-19 repots")
+    parser.add_argument('-p', '--province',
+                        help="sets state or province for COVID-19 repots")
+    parser.add_argument('-cl', '--countrylist', action='store_true',
+                        help="Displays valid country names")
+    parser.add_argument('-pl', '--provincelist', action='store_true',
+                        help="Displays valid provinces or states for country")
+    args = parser.parse_args()
+
     # URL used to fetch COVID-19 case data in CSV format
     data_url = 'https://query.data.world/s/js7bdacf5rurkiql7nioreohprqtdx'
-    #data_url = 'covid-case-data.csv'
+    data_url = 'covid-case-data.csv'
 
     # Read CSV file from file name or URL
     df = pd.read_csv(data_url)
 
+    if args.country:
+        country = args.country
+
+    if args.province:
+        province = args.province
+
+    if args.countrylist:
+        print(get_countries(df))
+        sys.exit()
+
+    if args.provincelist:
+        print(get_provinces_for_country(df, country))
+        sys.exit()
+
     # Save raw COVID-19 data to a local CSV file for reference
     df.to_csv('covid-case-data.csv', index=False)
 
-    # Get aggregated COVID-19 data grouped by date and
-    # summed by Deaths in the U.S.
-    df_deaths = get_aggregate_covid_data_frame(df, 'Deaths', 'US')
+    # Output graph set by country
+    output_graph_set_by_country(df, country, province)
 
-    # Get aggregated COVID-19 data grouped by date and
-    # summed by Infections in the U.S.
-    df_inf = get_aggregate_covid_data_frame(df, 'Confirmed', 'US')
-
-    # Output line graph of current death counts by date
-    output_plot(df_deaths, 'covid-19-deaths-line-graph.png', 'line',
-                'Date', 'Cases', 'Date', 'Death Count', 'r',
-                'U.S. COVID-19 Death Count')
-
-    # Output line graph of current infection counts by date
-    output_plot(df_inf, 'covid-19-infections-line-graph.png', 'line',
-                'Date', 'Cases', 'Date', 'Infection Count', 'g',
-                'U.S. COVID-19 Infection Count')
-
-    # Generate the FB Prophet forecast for deaths and output forecast images
-    forecast(df_deaths, 'covid-19-death-forecast.png',
-             'U.S. Covid-19 Death Forecast', 'Date', 'Deaths')
-
-    # Generate the FB Prophet forecast for deaths and output forecast images
-    forecast(df_inf, 'covid-19-infection-forecast.png',
-             'U.S. Covid-19 Infection Forecast', 'Date', 'Infections')
-
-
-# Invoke main function
-main()
+if __name__ == "__main__":
+    main(sys.argv[1:])
 
 ```
 
