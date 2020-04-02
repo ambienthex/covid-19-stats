@@ -37,7 +37,7 @@ Keep in mind the forecast can change for better or worse as new case data is add
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
 
 **April 2nd, 2020**
-World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something of comparison regarding mortality.  Death count is more than likely lower with the extreme measures we are taken, but I'm feeling a lot more optimistic about all of this.  These are the official numbers and not my assumption. Extreme measures maybe.
+World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something of comparison regarding mortality.  Death count is more than likely lower with the extreme measures we are taken, but I'm feeling a lot more optimistic about all of this.  These are the official numbers and not my assumption. Extreme measures maybe keeping the death count lower than it would be otherwise without a lockdown. Not sure. 
 
 ```sql
 SELECT date, sum(Cases) deaths
