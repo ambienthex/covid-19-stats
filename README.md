@@ -16,6 +16,26 @@ Keep in mind the forecast can change for better or worse as new case data is add
 3. Added Graphs for Daily Deaths and Infections.
 4. Added the ability to list valid countries for reports with the -cl option.
 
+# Sample Graphs
+
+## Facebook Prophet COVID-19 U.S. Death Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
+
+## Facebook Prophet COVID-19 U.S. Infection Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
+
+## Running Total U.S. Death Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-running-total-line-graph.png)
+
+## Daily U.S. Death Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-by-day-line-graph.png)
+
+## Running Total U.S. Infection Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-running-total-line-graph.png)
+
+## Daily U.S.Infection Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
+
 
 # Abstract:
 **On March 15th, 2020**, the US Center for Disease Control and Prevention reported that between 160 and 214 million people could become infected with COVID-19 in the United States with 200,000 to 1.7 million deaths. They stated that the epidemic could last months or even over a year.
@@ -34,24 +54,6 @@ A simple forecast using FB Prophet with the data from John Hopkins University se
 
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths as of March 29th, 2020.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-29.jpg)
-
-# Facebook Prophet COVID-19 U.S. Death Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
-
-# Facebook Prophet COVID-19 U.S. Infection Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
-
-# Running Total U.S. Death Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-running-total-line-graph.png)
-
-# Daily U.S. Death Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-by-day-line-graph.png)
-
-# Running Total U.S. Infection Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-running-total-line-graph.png)
-
-# Daily U.S.Infection Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
 
