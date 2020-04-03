@@ -36,8 +36,6 @@ Keep in mind the forecast can change for better or worse as new case data is add
 ## Facebook Prophet COVID-19 U.S. Infection Forecast
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
 
-**April 2nd, 2020**
-World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something for comparison so far.  Death count may be lower than forecasted with the extreme measures taken to control the virus. Regardless of what the forecasts show, I'm feeling a bit more optimistic about the death count being lower than forecasted  These are the official numbers and not my assumption. 
 
 ```sql
 SELECT date, sum(Cases) deaths
@@ -69,6 +67,9 @@ Using Facebook Prophet and the John Hopkins Data Set, here's the forecast for Ma
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-29.jpg)
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
+
+**April 2nd, 2020**
+World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something for comparison so far.  Death count may be lower than forecasted with the extreme measures taken to control the virus. Regardless of what the forecasts show, I'm feeling a bit more optimistic about the death count being lower than forecasted  These are the official numbers and not my assumption. 
 
 
 **Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
