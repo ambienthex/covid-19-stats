@@ -37,7 +37,7 @@ Keep in mind the forecast can change for better or worse as new case data is add
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
 
 **April 2nd, 2020**
-World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something of comparison regarding mortality.  Death count is more than likely lower with the extreme measures we are taken, but I'm feeling a lot more optimistic about all of this.  These are the official numbers and not my assumption. Extreme measures maybe keeping the death count lower than it would be otherwise without a lockdown. Not sure. 
+World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something for comparison so far.  Death count may be lower than forecasted with the extreme measures taken to control the virus. Regardless of what the forecasts show, I'm feeling a bit more optimistic about the death count being lower than forecasted  These are the official numbers and not my assumption. 
 
 ```sql
 SELECT date, sum(Cases) deaths
@@ -65,9 +65,7 @@ Python with the Pandas, Facebook Prophet library and the John Hopkins University
 
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
-A simple forecast using FB Prophet with the data from John Hopkins University seems to be about in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths. No time frame was specified in these forecasts.
-
-Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths as of March 29th, 2020.
+Using Facebook Prophet and the John Hopkins Data Set, here's the forecast for March 29th:
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-29.jpg)
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
@@ -75,7 +73,7 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 
 **Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
 
-This somewhat confirms they are doing a regression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of daily death counts grouped by date. Here's the updated forecast using this code for March 31st. No upper limits really as they don't know the limiting factors and really not enough data points over more time for an accurate forecast in my opinion. 
+Using Facebook Prophet and the John Hopkins Data Set, here's the forecast on March 31st:
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
 
 
