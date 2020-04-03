@@ -65,7 +65,7 @@ Python with the Pandas, Facebook Prophet library and the John Hopkins University
 
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
-A simple forecast using FB Prophet with the data from John Hopkins University seems to be about in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths.
+A simple forecast using FB Prophet with the data from John Hopkins University seems to be about in line with Dr. Fauci's reported range of 100,000 to 200,000 possible U.S. COVID-19 deaths. No time frame was specified in these forecasts.
 
 Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in line with Dr. Fauci's announcement of 100,000 to 200,000 possible U.S. deaths as of March 29th, 2020.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-29.jpg)
@@ -75,7 +75,7 @@ Using Facebook Prophet and the John Hopkins Data Set, the forecast is nearly in 
 
 **Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
 
-This somewhat confirms they are doing a regression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of daily death counts grouped by date. Here's the updated forecast using this code for March 31st. Again, this forecast is about inline still. 
+This somewhat confirms they are doing a regression (Bayesian-influenced generalized additive model, a regression of smooth terms) forecast on the aggregate sum of daily death counts grouped by date. Here's the updated forecast using this code for March 31st. No upper limits really as they don't know the limiting factors and really not enough data points over more time for an accurate forecast in my opinion. 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
 
 
