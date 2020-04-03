@@ -18,12 +18,6 @@ Keep in mind the forecast can change for better or worse as new case data is add
 
 # Sample Graphs
 
-## Facebook Prophet COVID-19 U.S. Death Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
-
-## Facebook Prophet COVID-19 U.S. Infection Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
-
 ## Running Total U.S. Death Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-running-total-line-graph.png)
 
@@ -35,6 +29,12 @@ Keep in mind the forecast can change for better or worse as new case data is add
 
 ## Daily U.S.Infection Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
+
+## Facebook Prophet COVID-19 U.S. Death Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
+
+## Facebook Prophet COVID-19 U.S. Infection Forecast
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
 
 **April 2nd, 2020**
 World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something for comparison so far.  Death count may be lower than forecasted with the extreme measures taken to control the virus. Regardless of what the forecasts show, I'm feeling a bit more optimistic about the death count being lower than forecasted  These are the official numbers and not my assumption. 
