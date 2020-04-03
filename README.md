@@ -86,7 +86,7 @@ Thought I could use the infection case data with the death case data somehow in 
 
 **Source**: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavirus-cases-is-an-almost-meaningless-metric
 
-Even though this forecast is in the range of 100,000 to 200,000 possible deaths and in line with Dr. Faucis forecast range, I'm slightly more optimistic with a range of 50,000 - 100,000 possible deaths regardless of what the forecast shows. This forecast doesn't account for things that will help or slow the situation(e.g. positive changes, behavior changes, effective social distancing and effective treatments that may emerge). The death toll could be way less if doctors and nurses don't fall ill, hospitals are not overwhelmed and effective treatments are found. Any loss of life is tragic and hope for the best. Believe healthcare workers and medical professionals will adapt and overcome to win the battle against COVID-19.
+Regardless what the forecasts show, I'm slightly more optimistic with a range of 50,000 - 100,000 possible deaths. Forecast doesn't account for things that will help or slow the situation(e.g. positive changes, behavior changes, effective social distancing and effective treatments that may emerge). The death toll could be way less if doctors and nurses don't fall ill, hospitals are not overwhelmed and effective treatments are found. Any loss of life is tragic and hope for the best. Believe healthcare workers and medical professionals will adapt and overcome to win the battle against COVID-19.
 
 
 # Implementation
