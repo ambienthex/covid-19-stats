@@ -68,11 +68,16 @@ Using Facebook Prophet and the John Hopkins Data Set, here's the forecast for Ma
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
 
+**Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
+
 **April 2nd, 2020**
 World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 people per year globally. We are into month four of a global Corona virus crisis and have 46,806 deaths globally. Could get worse, but something for comparison so far.  Death count may be lower than forecasted with the extreme measures taken to control the virus. Regardless of what the forecasts show, I'm feeling a bit more optimistic about the death count being lower than forecasted  These are the official numbers and not my assumption. 
 
+**April 2nd, 2020**
+Experts, Trump’s advisers doubt White House’s 240,000 coronavirus deaths estimate. Jeffrey Shaman, a Columbia University epidemiologist whose models were cited by the White House, said his own work on the pandemic doesn't go far enough into the future to make predictions akin to the White House fatality forecast. "I think we can come in under 100,000 deaths. I do," Shaman said. "The jury is not yet in on this.".
 
-**Source**: https://apnews.com/6ed70e9db88b80439a087fdad8238009
+**Source**: https://www.msn.com/en-us/news/us/experts-trumps-advisers-doubt-white-houses-240000-coronavirus-deaths-estimate/ar-BB1263eT
+
 
 Using Facebook Prophet and the John Hopkins Data Set, here's the forecast on March 31st:
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
