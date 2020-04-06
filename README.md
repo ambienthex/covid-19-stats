@@ -31,19 +31,19 @@ Keep in mind the forecast can change for better or worse as new case data is add
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-infections-by-day-line-graph.png)
 
 ## Facebook Prophet COVID-19 Italy Daily Death Forecast
-Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop.
+Forecast is currently off in never never land past May with limited data and no limiting factors. 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-daily-death-forecast.png)
 
 ## Facebook Prophet COVID-19 Italy Total Death Forecast
-Keep in mind there are no limiting factors. Slope could be much less steep when daily death counts start to drop.
+Forecast is currently off in never never land past May with limited data and no limiting factors. 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-total-death-forecast.png)
 
 ## Facebook Prophet COVID-19 Italy Total Infection Forecast
-Keep in mind there are no limiting factors. Slope could be much less steep when daily infection counts start to drop.
+Forecast is currently off in never never land past May with limited data and no limiting factors. 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-total-infection-forecast.png)
 
-## Facebook Prophet COVID-19 U.S. Daily Infection Forecast
-Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop.
+## Facebook Prophet COVID-19 Italy Daily Infection Forecast
+Forecast is currently off in never never land past May with limited data and no limiting factors. 
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-daily-infection-forecast.png)
 
 ## Running Total U.S. Death Count Graph
@@ -59,19 +59,19 @@ Keep in mind there are no limiting factors. Slope could start a downward trend w
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-infections-by-day-line-graph.png)
 
 ## Facebook Prophet COVID-19 U.S. Total Death Forecast
-Keep in mind there are no limiting factors. Slope could be much less steep when daily death counts start to drop in May.
+Forecast is currently off in never never land past May with limited data and no limiting factors.  Slope could be much less steep when daily death counts start to drop in May.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-total-death-forecast.png)
 
 ## Facebook Prophet COVID-19 U.S. Daily Death Forecast
-Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop in May.
+Forecast is currently off in never never land past May with limited data and no limiting factors. Forecast could start a downward trend when daily infection counts start to drop in May.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-daily-death-forecast.png)
 
 ## Facebook Prophet COVID-19 U.S. Total Infection Forecast
-Keep in mind there are no limiting factors. Slope could be much less steep when daily infection counts start to drop in May.
+Forecast is currently off in never never land past May with limited data and no limiting factors. Slope could be much less steep when daily infection counts start to drop in May.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-total-infection-forecast.png)
 
 ## Facebook Prophet COVID-19 U.S. Daily Infection Forecast
-Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop in May.
+Forecast is currently off in never never land past May with limited data and no limiting factors.  Forecast could start a downward trend when daily infection counts start to drop in May.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-daily-infection-forecast.png)
 
 
