@@ -55,7 +55,7 @@ https://facebook.github.io/prophet/docs/installation.html
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-daily-death-forecast.png)
 
 ## Facebook Prophet COVID-19 Italy Total Death Forecast
-Forecast is currently off in never never land past May with limited data and no limiting factors. 
+Forecast is currently off in never never land past May with limited data and no limiting factors. Italy is on a daily death count decline as of early April.
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-total-death-forecast.png)
 
 ## Facebook Prophet COVID-19 Italy Total Infection Forecast
