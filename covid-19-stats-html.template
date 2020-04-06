@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>U.S. COVID-19 Statistics</title>
+  </head>
+  <body>
+    <style>
+          body, html {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            background-color: white;
+          }
+
+          .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.png");
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+          }
+
+          table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+
+          td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+
+          tr:nth-child(even){background-color: #f2f2f2;}
+
+          tr:hover {background-color: #ddd;}
+
+          th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #F1F1F1;
+            color: #000000;
+          }
+          table th.first { display: none; }
+          table td.first { display: none; }
+
+          .content {
+            padding: 2rem;
+          }s
+      </style>
+      <div class="hero-image"></div>
+
+      <div class="content">
+        <div><img src="covid-19-deaths-running-total-line-graph.png"/></div>
+        <div><img src="covid-19-deaths-by-day-line-graph.png"/></div>
+        <div><img src="covid-19-infections-running-total-line-graph.png"/></div>
+        <div><img src="covid-19-infections-by-day-line-graph.png"/></div>
+        <div><img src="covid-19-total-death-forecast.png"/></div>
+        <div><img src="covid-19-daily-death-forecast.png"/></div>
+        <div><img src="covid-19-total-infection-forecast.png"/></div>
+        <div><img src="covid-19-daily-infection-forecast.png"/></div>
+        <div id="data-frame"></div>
+      </div>
+  </body>
+</html>
+
