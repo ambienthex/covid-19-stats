@@ -1,7 +1,7 @@
 # Project: U.S. COVID-19 Virus Forecasting
 This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast COVID-19 deaths and infections by country and state using case data from John Hopkins University. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. Output is two forecast graphs for deaths and infections, four line graphs (running total and daily counts) for deaths and infection counts and the raw downloaded case data. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run. After running the stats.py script, you can launch "covid-19-stats.htm" in a browser to see all the graphs together. 
 
-Can also filter by country using the -c option (e.g. python3 stats.py -c "Italy"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York"). State / Province filtering only works for a few countries as John Hopkins isn;t consistently providing state and province for all countries. Running python3 stats.py alone will generate graphs for the US only.
+Can also filter by country using the -c option (e.g. python3 stats.py -c "Italy"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York"). State / Province filtering only works for a few countries as John Hopkins isn't consistently providing state and province for all countries. Running python3 stats.py alone will generate graphs for the US only.
 
 Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. May have to tweak the  changepoint_prior_scale and changepoint_range for more accurate forecasts depending on country specified. 
 
@@ -19,22 +19,32 @@ Keep in mind the forecast can change for better or worse as new case data is add
 # Sample Graphs
 
 ## Running Total U.S. Death Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-running-total-line-graph.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-deaths-running-total-line-graph.png)
 
 ## Daily U.S. Death Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-deaths-by-day-line-graph.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-deaths-by-day-line-graph.png)
 
 ## Running Total U.S. Infection Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-running-total-line-graph.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-infections-running-total-line-graph.png)
 
 ## Daily U.S.Infection Count Graph
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infections-by-day-line-graph.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-infections-by-day-line-graph.png)
 
-## Facebook Prophet COVID-19 U.S. Death Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast.png)
+## Facebook Prophet COVID-19 U.S. Total Death Forecast
+Keep in mind there are no limiting factors. Slope could be much less steep when daily death counts start to drop in May.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-total-death-forecast.png)
 
-## Facebook Prophet COVID-19 U.S. Infection Forecast
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-infection-forecast.png)
+## Facebook Prophet COVID-19 U.S. Daily Death Forecast
+Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop in May.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-daily-death-forecast.png)
+
+## Facebook Prophet COVID-19 U.S. Total Infection Forecast
+Keep in mind there are no limiting factors. Slope could be much less steep when daily infection counts start to drop in May.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-total-infection-forecast.png)
+
+## Facebook Prophet COVID-19 U.S. Daily Infection Forecast
+Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop in May.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-daily-infection-forecast.png)
 
 
 ```sql
@@ -64,7 +74,7 @@ Python with the Pandas, Facebook Prophet library and the John Hopkins University
 **Source**: https://www.npr.org/sections/coronavirus-live-updates/2020/03/29/823517467/fauci-estimates-that-100-000-to-200-000-americans-could-die-from-the-coronavirus
 
 Using Facebook Prophet and the John Hopkins Data Set, here's the forecast for March 29th:
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-29.jpg)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-death-forecast-2020-03-29.jpg)
 
 **On March 31st**, Forecast jump... President Donald Trump and Dr. Deborah Birx, the coordinator of the White House coronavirus task force warned Americans to brace for a “hell of a bad two weeks” ahead as the White House projected there could be 100,000 to 240,000 deaths in the U.S. from the coronavirus pandemic even if current social distancing guidelines are maintained.
 
@@ -84,7 +94,7 @@ Bill Gates said the United States will see far fewer than the White House foreca
 
 
 Using Facebook Prophet and the John Hopkins Data Set, here's the forecast on March 31st:
-![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/covid-19-death-forecast-2020-03-31.png)
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-death-forecast-2020-03-31.png)
 
 
 # Assumptions
