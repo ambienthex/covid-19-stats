@@ -18,6 +18,34 @@ Keep in mind the forecast can change for better or worse as new case data is add
 
 # Sample Graphs
 
+## Running Total Italy. Death Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-deaths-running-total-line-graph.png)
+
+## Daily Italy Death Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-deaths-by-day-line-graph.png)
+
+## Running Total Italy Infection Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-infections-running-total-line-graph.png)
+
+## Daily Italy Infection Count Graph
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-infections-by-day-line-graph.png)
+
+## Facebook Prophet COVID-19 Italy Total Death Forecast
+Keep in mind there are no limiting factors. Slope could be much less steep when daily death counts start to drop.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-total-death-forecast.png)
+
+## Facebook Prophet COVID-19 Italy Daily Death Forecast
+Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-daily-death-forecast.png)
+
+## Facebook Prophet COVID-19 Italy Total Infection Forecast
+Keep in mind there are no limiting factors. Slope could be much less steep when daily infection counts start to drop.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-total-infection-forecast.png)
+
+## Facebook Prophet COVID-19 U.S. Daily Infection Forecast
+Keep in mind there are no limiting factors. Slope could start a downward trend when daily infection counts start to drop.
+![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/italy-covid-19-daily-infection-forecast.png)
+
 ## Running Total U.S. Death Count Graph
 ![image](https://raw.githubusercontent.com/ambienthex/covid-19-stats/master/git-images/covid-19-deaths-running-total-line-graph.png)
 
