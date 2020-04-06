@@ -1,5 +1,19 @@
 # Project: U.S. COVID-19 Virus Forecasting
-This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast COVID-19 deaths and infections by country and state using case data from John Hopkins University. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. Output is two forecast graphs for deaths and infections, four line graphs (running total and daily counts) for deaths and infection counts and the raw downloaded case data. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run. After running the stats.py script, you can launch "covid-19-stats.htm" in a browser to see all the graphs together. 
+This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast COVID-19 deaths and infections by country and state using case data from John Hopkins University. Various forecast and stats graphs for deaths and infections are generated. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. 
+
+# Outputs a specified country
+1. Open covid-19-stats.htm after running script to see all stats below. 
+2. Total death count graph.
+3. Daily death count graph. 
+4. Total infection count graph.
+5. Daily infection count graph.
+6. Total death count forecast graph. 
+7. Daily death count forecast graph.
+8. Total infection count forecast graph.
+9. Daily infection count forecast graph. 
+10. Downloaded stats; covid-case-data.csv
+11. stats-by-date.csv (Date,Running Death Count,Daily Deaths,Running Infection Count,Daily Infections).
+
 
 Can also filter by country using the -c option (e.g. python3 stats.py -c "Italy"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York"). State / Province filtering only works for a few countries as John Hopkins isn't consistently providing state and province for all countries. Running python3 stats.py alone will generate graphs for the US only.
 
@@ -476,6 +490,9 @@ import matplotlib.pyplot as plt
 # Python Data Analysis Library
 import pandas as pd
 
+# Python XML HTML parser
+from bs4 import BeautifulSoup
+
 
 def get_aggregate_covid_data_frame(df, case_type, sum_field,
                                    country_region=None,
@@ -498,17 +515,15 @@ def get_aggregate_covid_data_frame(df, case_type, sum_field,
 
     # Dynamically build query criteria
     criteria = '(Case_Type == "' + case_type + '")'
-    if (country_region):
-        criteria += ' & (Country_Region == "' + country_region + '")'
-    if (province_state):
-        criteria += ' & (Province_State == "' + province_state + '")'
+
+    if country_region.lower() != 'all':
+        if (country_region):
+            criteria += ' & (Country_Region == "' + country_region + '")'
+        if (province_state):
+            criteria += ' & (Province_State == "' + province_state + '")'
 
     # Get data frame with a query using the dynamic criteria
     df = df.query(criteria)
-
-    # Filter data by case type and country
-    df = df[(df.Case_Type == case_type) &
-            (df.Country_Region == country_region)]
 
     # Group data by date and aggregate sum of cases
     df = df[['Date', sum_field]].groupby(['Date'], as_index=False).sum()
@@ -551,12 +566,12 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
     # seasonalitty of COVID-19 virus case data.
 
     model = Prophet(
-        changepoint_prior_scale=0.2,
+        changepoint_prior_scale=0.25,
         changepoint_range=0.95,
         yearly_seasonality=False,
-        weekly_seasonality=True,  # Enable daily seasonality
+        weekly_seasonality=False,  # Enable daily seasonality
         daily_seasonality=True,  # Enable daily seasonality
-        seasonality_mode='additive',
+        seasonality_mode='multiplicative',
     )
 
     # Rename the date and case_count columns to ds and y
@@ -573,7 +588,8 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
     # dataframe that extends into the future a specified number of days using
     # the helper method Prophet.make_future_dataframe. By default it will also
     # include the dates from the history, so we will see the model fit as well.
-    future = model.make_future_dataframe(periods=365)
+    future = model.make_future_dataframe(periods=90,
+                                         freq="D", include_history=True)
 
     # The predict method will assign each row in future a predicted value
     # which it names yhat. If you pass in historical dates, it will provide an
@@ -613,7 +629,7 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
     fig.savefig(forecast_output_filename)
 
     # Return the model
-    return model
+    return forecast
 
 
 def output_plot(df, img_output_file, graph_kind, x_field, y_field,
@@ -648,6 +664,12 @@ def output_plot(df, img_output_file, graph_kind, x_field, y_field,
     plt.savefig(img_output_file)
 
 
+def insert_dataframe_html_into_div(soup, df, div_id):
+    """Insert dataframe HTML into DIV by id."""
+    element = soup.find(id=div_id)
+    element.append(BeautifulSoup(df.to_html(), 'html.parser'))
+
+
 def output_graph_set_by_country(df, country, province=None):
     """Output graph set by country."""
     # Get aggregated COVID-19 data grouped by date and
@@ -674,7 +696,11 @@ def output_graph_set_by_country(df, country, province=None):
                                                       'Difference', country,
                                                       province)
 
-    location = province + ', ' + country if province else country
+    location = None
+    if country.lower() == 'all':
+        location = 'Global'
+    else:
+        location = province + ', ' + country if province else country
 
     # Output line graph of current death counts by date
     output_plot(df_running_total_deaths,
@@ -698,14 +724,43 @@ def output_graph_set_by_country(df, country, province=None):
                 'line', 'Date', 'Difference', 'Date', 'Infection Count', 'g',
                 location + ' COVID-19 Infections per Day')
 
-    # Generate the FB Prophet forecast for deaths and output forecast images
-    forecast(df_running_total_deaths, 'covid-19-death-forecast.png',
-             location + ' Covid-19 Death Forecast', 'Date', 'Deaths')
+    # Forecast total deaths. No limiting factors defined.
+    forecast(df_running_total_deaths, 'covid-19-total-death-forecast.png',
+             location + ' COVID-19 Total Death Forecast', 'Date',
+             'Total Deaths')
 
-    # Generate the FB Prophet forecast for infections and o
-    # utput forecast images
-    forecast(df_running_total_inf, 'covid-19-infection-forecast.png',
-             location + ' Covid-19 Infection Forecast', 'Date', 'Infections')
+    # Forecast daily deaths. No limiting factors defined.
+    forecast(df_daily_deaths, 'covid-19-daily-death-forecast.png',
+             location + 'COVID-19 Daily Death Forecast', 'Date',
+             'Daily Deaths')
+
+    # Forecast total infections. No limiting factors defined
+    forecast(df_running_total_inf, 'covid-19-total-infection-forecast.png',
+             location + 'COVID-19 Total Infection Forecast',
+             'Date', 'Total Infections')
+
+    # Forecast daily infections. No limiting factors defined
+    forecast(df_daily_inf, 'covid-19-daily-infection-forecast.png',
+             location + 'COVID-19 Daily Infections Forecast', 'Date',
+             'Daily Infections')
+
+    df_combined = pd.concat([df_running_total_deaths,
+                            df_daily_deaths,
+                            df_running_total_inf,
+                            df_daily_inf],
+                            ignore_index=True, axis=1)
+
+    df_combined = df_combined[[0, 1, 3, 5, 7]]
+    df_combined.columns = df_combined.columns.astype(str)
+    df_combined.columns = ['Date', 'Running Death Count', 'Daily Deaths',
+                           'Running Infection Count', 'Daily Infections']
+    df_combined.to_csv('stats-by-date.csv', index=False)
+
+    soup = BeautifulSoup(open('covid-19-stats-html.template'), 'html.parser')
+    insert_dataframe_html_into_div(soup, df_combined, 'data-frame')
+
+    with open("covid-19-stats.htm", "w") as file:
+        file.write(str(soup))
 
 
 def get_countries(df):
@@ -731,13 +786,15 @@ def main(argv):
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--country',
-                        help="sets country filter for COVID-19 repots")
+                        help="sets country filter for COVID-19 reports. "
+                        "Default if not specified is US. Use \"all\" for "
+                        "global reports.")
     parser.add_argument('-p', '--province',
-                        help="sets state or province for COVID-19 repots")
+                        help="sets state or province for COVID-19 reports.")
     parser.add_argument('-cl', '--countrylist', action='store_true',
-                        help="Displays valid country names")
+                        help="displays valid country names.")
     parser.add_argument('-pl', '--provincelist', action='store_true',
-                        help="Displays valid provinces or states for country")
+                        help="displays valid provinces or states for country.")
     args = parser.parse_args()
 
     # URL used to fetch COVID-19 case data in CSV format
