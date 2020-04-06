@@ -3,7 +3,7 @@ This GIT repo contains a simple Python(3) script (stats.py) that can be used to 
 
 Can also filter by country using the -c option (e.g. python3 stats.py -c "Italy"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York"). State / Province filtering only works for a few countries as John Hopkins isn;t consistently providing state and province for all countries. Running python3 stats.py alone will generate graphs for the US only.
 
-Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. 
+Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. May have to tweak the  changepoint_prior_scale and changepoint_range for more accurate forecasts depending on country specified. 
 
 
 **Facebook's Prophet Documentation:** https://facebook.github.io/prophet/
@@ -77,6 +77,10 @@ World Health Organization (WHO) estimates that the flu kills 290,000 to 650,000 
 Experts, Trump’s advisers doubt White House’s 240,000 coronavirus deaths estimate. Jeffrey Shaman, a Columbia University epidemiologist whose models were cited by the White House, said his own work on the pandemic doesn't go far enough into the future to make predictions akin to the White House fatality forecast. "I think we can come in under 100,000 deaths. I do," Shaman said. "The jury is not yet in on this.".
 
 **Source**: https://www.msn.com/en-us/news/us/experts-trumps-advisers-doubt-white-houses-240000-coronavirus-deaths-estimate/ar-BB1263eT
+
+**April 5, 2020**
+Bill Gates said the United States will see far fewer than the White House forecast of between 100,000 and 240,000 coronavirus-related deaths if U.S. citizens stay home.
+**Source**: https://www.cnbc.com/2020/04/05/bill-gates-coronavirus-pandemic-a-nightmare-scenario.html
 
 
 Using Facebook Prophet and the John Hopkins Data Set, here's the forecast on March 31st:
