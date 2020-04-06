@@ -39,7 +39,7 @@ https://facebook.github.io/prophet/
 https://pandas.pydata.org/docs/
 
 # Other Forecasting References:
-Here are a few interesting links below about how viruses can be forecasted using Generalized logistic growth modeling of the COVID-19 outbreak. The first one uses logistics growth modeling to forecastt up to the peak and other methods (generalized Richards model) to forecast the decay. I don't have this implemented yet in this forecast, but somewhat similar results up to the peak.These are more proven methods for accurately forecasting viruses. Will try to improve upon the forecasts using logistics growth modeling to better define the upper limits. Modeling the decay is a bit more complicated. 
+Here are a few interesting links below about how viruses can be forecasted using generalized logistic growth modeling of the COVID-19 outbreak. The first one uses logistics growth modeling to forecastt up to the peak and other methods (generalized Richards model) to forecast the decay. I don't have this implemented yet in this forecast, but somewhat similar results up to the peak.These are more proven methods for accurately forecasting viruses. Will try to improve upon the forecasts using logistics growth modeling to better define the upper limits. Modeling the decay is a bit more complicated. 
 
 Epidemiologists also use the Susceptible Infectious Recovered model (SIR) and they need case data from three different populations in an outbreak to get a more accurate forecast.  They ideally need data for the full cycle of an outbreak in three populations to learn the behavior and duration of an outbreak. They track those vulnerable to infection, those who are infectious and those gradually removed from the equation by death or recovery.  
 
