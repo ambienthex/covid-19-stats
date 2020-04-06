@@ -32,9 +32,6 @@ Keep in mind the forecast can change for better or worse as new case data is add
 Facebook Prophet can be a pain to setup sometime. Refer to Facebook Prophet's documentation if you run into issues:
 https://facebook.github.io/prophet/docs/installation.html
 
-Pandas Documentation:
-https://pandas.pydata.org/docs/
-
 **Facebook's Prophet Documentation:** https://facebook.github.io/prophet/
 
 **Pandas Documentation:** https://pandas.pydata.org/docs/
