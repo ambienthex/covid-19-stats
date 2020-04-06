@@ -36,6 +36,15 @@ https://facebook.github.io/prophet/docs/installation.html
 
 **Pandas Documentation:** https://pandas.pydata.org/docs/
 
+**Other Forecasting References:**
+Here are a few interesting links about how viruses can be forecasted using Generalized logistic growth modeling of the COVID-19 outbreak. The firstt one uses logistics growth modeling to forecastt up to the peak and other methods (generalized Richards model) to forecast the decay. I don't have this implemented yet in this forecast, but somewhat similar results up to the peak. 
+
+***Generalized logistic growth modeling of the COVID-19 outbreak***
+https://arxiv.org/pdf/2003.05681.pdf
+
+***COVID-19 Growth Modeling and Forecasting with Prophet***
+https://medium.com/p/2ff5ebd00c01/responses/show
+
 
 # Sample Graphs
 
