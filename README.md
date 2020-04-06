@@ -1,7 +1,9 @@
 # Project: U.S. COVID-19 Virus Forecasting
 This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast COVID-19 deaths and infections by country and state using case data from John Hopkins University. Various forecast and stats graphs for deaths and infections are generated. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. 
 
-# Outputs a specified country
+Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. May have to tweak the  changepoint_prior_scale and changepoint_range for more accurate forecasts depending on country specified. 
+
+# Outputs for a specified country
 1. Open covid-19-stats.htm after running script to see all stats below. 
 2. Total death count graph.
 3. Daily death count graph. 
@@ -14,21 +16,29 @@ This GIT repo contains a simple Python(3) script (stats.py) that can be used to 
 10. Downloaded stats; covid-case-data.csv
 11. stats-by-date.csv (Date,Running Death Count,Daily Deaths,Running Infection Count,Daily Infections).
 
+# Setup, Execution and Output
+1. git clone git@github.com:ambienthex/covid-19-stats.git
+2. cd covid-19-stats
+3. pip3 install pystan
+4. pip3 install pandas
+5. pip3 install fbprophet
+6. pip3 insttall beautifulsoup4
+7. python3 stats.py for U.S. data or python3 stats.py -c "Italy"
+9. After running the stats.py script, can launch "covid-19-stats.htm" in a browser to see all the graphs together.
+10. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run.
+11. Filter by country using the -c option (e.g. python3 stats.py -c "US"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York"). Province filter only works for U.S. data.
+12. Helper command line option available to list all valid Country names: python3 stats.py -cl
 
-Can also filter by country using the -c option (e.g. python3 stats.py -c "Italy"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York"). State / Province filtering only works for a few countries as John Hopkins isn't consistently providing state and province for all countries. Running python3 stats.py alone will generate graphs for the US only.
+Facebook Prophet can be a pain to setup sometime. Refer to Facebook Prophet's documentation if you run into issues:
+https://facebook.github.io/prophet/docs/installation.html
 
-Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. May have to tweak the  changepoint_prior_scale and changepoint_range for more accurate forecasts depending on country specified. 
-
+Pandas Documentation:
+https://pandas.pydata.org/docs/
 
 **Facebook's Prophet Documentation:** https://facebook.github.io/prophet/
 
 **Pandas Documentation:** https://pandas.pydata.org/docs/
 
-**April 1st Code Updates:**
-1. Added international support. Country can be specified on the command line with the -c option. 
-2. Added the ability to filter on U.S. state using the -p option.
-3. Added Graphs for Daily Deaths and Infections.
-4. Added the ability to list valid countries for reports with the -cl option.
 
 # Sample Graphs
 
@@ -829,20 +839,4 @@ if __name__ == "__main__":
 
 ```
 
-# Setup, Execution and Output
-1. git clone git@github.com:ambienthex/covid-19-stats.git
-2. cd covid-19-stats
-3. pip3 install pystan
-4. pip3 install pandas
-5. pip3 install fbprophet
-6. python3 stats.py
-7. Output is four image files (deaths.png, death-components.png, infections.png and infections-components.png).
-8. After running the stats.py script, can launch "covid-19-stats.htm" in a browser to see all the graphs together.
-9. Raw case data is also written to the "covid-case-data.csv" file which is overwritten on each run.
-10. Can also filter by country using the -c option (e.g. python3 stats.py -c "US"). Can filter by a U.S. state with (e.g. python3 stats.py -c "US" -p "New York").
-Facebook Prophet can be a pain to setup sometime. Refer to Facebook Prophet's documentation if you run into issues:
-https://facebook.github.io/prophet/docs/installation.html
-
-Pandas Documentation:
-https://pandas.pydata.org/docs/
 
