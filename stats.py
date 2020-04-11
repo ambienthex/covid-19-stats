@@ -309,17 +309,17 @@ def output_graph_set_by_country(df, country, province=None):
 
     # Forecast daily deaths. No limiting factors defined.
     forecast(df_daily_deaths, 'covid-19-daily-death-forecast.png',
-             location + 'COVID-19 Daily Death Forecast', 'Date',
+             location + ' COVID-19 Daily Death Forecast', 'Date',
              'Daily Deaths')
 
     # Forecast total infections. No limiting factors defined
     forecast(df_running_total_inf, 'covid-19-total-infection-forecast.png',
-             location + 'COVID-19 Total Infection Forecast',
+             location + ' COVID-19 Total Infection Forecast',
              'Date', 'Total Infections')
 
     # Forecast daily infections. No limiting factors defined
     forecast(df_daily_inf, 'covid-19-daily-infection-forecast.png',
-             location + 'COVID-19 Daily Infections Forecast', 'Date',
+             location + ' COVID-19 Daily Infections Forecast', 'Date',
              'Daily Infections')
 
     df_combined = pd.concat([df_running_total_deaths,
