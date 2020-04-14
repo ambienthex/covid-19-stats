@@ -193,10 +193,6 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
     ax.get_lines()[0].set_color("black")
     ax.get_lines()[1].set_color("r")
 
-    # Add logo badge to graph
-    logo = plt.imread('badge.gif')
-    ax.figure.figimage(logo, 300, 425, alpha=.75, zorder=1)
-
     # Disables exponent / scientific notation
     plt.ticklabel_format(style='plain', axis='y')
 
