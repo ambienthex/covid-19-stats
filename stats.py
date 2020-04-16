@@ -74,10 +74,11 @@ from bs4 import BeautifulSoup
 
 def get_aggregate_covid_data_frame(df, case_type, sum_field,
                                    country_region=None,
-                                   province_state=None):
+                                   province_state=None,
+                                   admin2=None):
     """Return a Covid-19 dataframe filtered with specified criteria.
 
-    Case type can be Confirmed or Deaths
+    Case type can be Confirmed or Deathss
     Sum field can be Cases or Difference
     The SQL equivilant for this Pandas code is equivalent to:
     SELECT date, sum(Cases)
@@ -99,6 +100,8 @@ def get_aggregate_covid_data_frame(df, case_type, sum_field,
             criteria += ' & (Country_Region == "' + country_region + '")'
         if (province_state):
             criteria += ' & (Province_State == "' + province_state + '")'
+        if (admin2):
+            criteria += ' & (Admin2 == "' + admin2 + '")'
 
     # Get data frame with a query using the dynamic criteria
     df = df.query(criteria)
@@ -175,6 +178,16 @@ def forecast(df, forecast_output_filename, title, x_label, y_label):
     # a column yhat with the forecast, as well as columns for components and
     # uncertainty intervals.
     forecast = model.predict(future)
+    forecast.to_csv('forecast.csv')
+
+    # Clip to zero
+    forecast['yhat'] = forecast['yhat'].clip(lower=0)
+    forecast['yhat_lower'] = forecast['yhat_lower'].clip(lower=0)
+    forecast['yhat_upper'] = forecast['yhat_upper'].clip(upper=0)
+    forecast['trend_lower'] = forecast['trend_lower'].clip(lower=0)
+    forecast['trend_upper'] = forecast['trend_upper'].clip(upper=0)
+
+    # yhat_lower,yhat_upper,trend_lower,trend_upper,daily,daily_lower,daily_upper,multiplicative_terms,multiplicative_terms_lower,multiplicative_terms_upper,additive_terms,additive_terms_lower,additive_terms_upper,yhat
 
     # Plot the forecast and save it to the specified output file name
     fig = model.plot(forecast)
@@ -244,37 +257,39 @@ def insert_dataframe_html_into_div(soup, df, div_id):
     element.append(BeautifulSoup(df.to_html(), 'html.parser'))
 
 
-def output_graph_set_by_country(df, country, province=None):
+def output_graph_set_by_country(df, country, province=None, admin2=None):
     """Output graph set by country."""
     # Get aggregated COVID-19 data grouped by date and
     # summed by Deaths in the U.S. Running total.
     df_running_total_deaths = get_aggregate_covid_data_frame(df, 'Deaths',
                                                              'Cases', country,
-                                                             province)
+                                                             province, admin2)
 
     # Get aggregated COVID-19 data grouped by date and
     # summed by Infections in the U.S. Running total.
     df_running_total_inf = get_aggregate_covid_data_frame(df, 'Confirmed',
                                                           'Cases', country,
-                                                          province)
+                                                          province, admin2)
 
     # Get aggregated daily COVID-19 infection data grouped by date and
     # summed by Infections in the U.S
     df_daily_deaths = get_aggregate_covid_data_frame(df, 'Deaths',
                                                      'Difference', country,
-                                                     province)
+                                                     province, admin2)
 
     # Get aggregated daily COVID-19 infection data grouped by date and
     # summed by Infections in the U.S.
     df_daily_inf = get_aggregate_covid_data_frame(df, 'Confirmed',
                                                       'Difference', country,
-                                                      province)
+                                                      province, admin2)
 
     location = None
     if country.lower() == 'all':
         location = 'Global'
     else:
-        location = province + ', ' + country if province else country
+        l = province + ', ' + country if province else country
+        l = province + ', ' + admin2 + ', ' + country if admin2 else l
+        location = l
 
     # Output line graph of current death counts by date
     output_plot(df_running_total_deaths,
@@ -357,6 +372,7 @@ def main(argv):
     """Main function."""
     country = 'US'
     province = None
+    admin2 = None
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--country',
@@ -369,11 +385,14 @@ def main(argv):
                         help="displays valid country names.")
     parser.add_argument('-pl', '--provincelist', action='store_true',
                         help="displays valid provinces or states for country.")
+    parser.add_argument('-a', '--admin2',
+                        help="sets admin2 filter for COVID-19 reports. "
+                        "admin2 contains U.S. county name.")
     args = parser.parse_args()
 
     # URL used to fetch COVID-19 case data in CSV format
-    data_url = 'https://query.data.world/s/js7bdacf5rurkiql7nioreohprqtdx'
-    # data_url = 'covid-case-data.csv'
+    # data_url = 'https://query.data.world/s/js7bdacf5rurkiql7nioreohprqtdx'
+    data_url = 'covid-case-data.csv'
 
     # Read CSV file from file name or URL
     df = pd.read_csv(data_url)
@@ -392,11 +411,14 @@ def main(argv):
         print(get_provinces_for_country(df, country))
         sys.exit()
 
+    if args.admin2:
+        admin2 = args.province
+
     # Save raw COVID-19 data to a local CSV file for reference
     df.to_csv('covid-case-data.csv', index=False)
 
     # Output graph set by country
-    output_graph_set_by_country(df, country, province)
+    output_graph_set_by_country(df, country, province, admin2)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
