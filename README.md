@@ -1,14 +1,12 @@
 # Project: U.S. COVID-19 Virus Forecasting
-This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast COVID-19 deaths and infections by country and state using case data from John Hopkins University. Various forecast and stats graphs for deaths and infections are generated. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. 
-
-Keep in mind the forecast can change for better or worse as new case data is added day to day. Forecast will get better as more data is available and hope to see the forecast go the other way sooner rather than later. May have to tweak the  changepoint_prior_scale and changepoint_range for more accurate forecasts depending on country specified. 
+This GIT repo contains a simple Python(3) script (stats.py) that can be used to forecast COVID-19 deaths and infections by country and state using case data from John Hopkins University. Various forecast and stats graphs for deaths and infections are generated. The stats.py script pulls the current John Hopkins COVID-19 CSV case data, transforms and sum aggregates daily death counts grouping by date using Pandas, and generate a forecast using Facebook's Prophet library. Data is updated daily at 9a.m. May have to tweak the changepoint_prior_scale and changepoint_range for more accurate forecasts depending on country specified. 
 
 # Outputs for a specified country
 1. Open covid-19-stats.htm after running script to see all stats below. 
 2. Total death count graph.
 3. Daily death count graph. 
 4. Total infection count graph.
-5. Daily infection count graph.
+5. Daily infection count grapj.
 6. Total death count forecast graph. 
 7. Daily death count forecast graph.
 8. Total infection count forecast graph.
@@ -170,8 +168,6 @@ Thought I could use the infection case data with the death case data somehow in 
 **On March 3rd, 2020**, Steve Goodman, a professor of epidemiology at Stanford University, said, “The infection numbers are almost meaningless. There is a huge reservoir of people who have mild cases, and would not likely seek testing. The rate of increase in positive results reflect a mixed-up combination of increased testing rates and spread of the virus."
 
 **Source**: https://www.bloomberg.com/opinion/articles/2020-03-28/confirmed-coronavirus-cases-is-an-almost-meaningless-metric
-
-Regardless what the forecasts show, I'm slightly more optimistic with a range of 50,000 - 100,000 possible deaths. Forecast doesn't account for things that will help or slow the situation(e.g. positive changes, behavior changes, effective social distancing and effective treatments that may emerge). The death toll could be way less if doctors and nurses don't fall ill, hospitals are not overwhelmed and effective treatments are found. Any loss of life is tragic and hope for the best. Believe healthcare workers and medical professionals will adapt and overcome to win the battle against COVID-19.
 
 
 # Implementation
